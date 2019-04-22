@@ -7,5 +7,5 @@ function copyStringToClipboard (str) {
     el.select();
     document.execCommand('copy');
     document.body.removeChild(el);
-    alert("email copied to clipboard")
+    alert("ms10596@gmail.com copied to clipboard")
 }

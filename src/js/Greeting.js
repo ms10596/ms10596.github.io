@@ -1,14 +1,6 @@
-'use strict';
 const e = React.createElement;
-
 class Greeting extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {liked: false};
-    }
-
     render() {
-
         return (<div>
                 <br/>
                 <div className="container">
@@ -16,7 +8,8 @@ class Greeting extends React.Component {
                         <div className="col-4">
                             <div className="card mt-3">
                                 <h1 className="card-title card-header text-dark">Mohamed Sayed</h1>
-                                <h4 className="font-italic font-weight-light text-center mt-2">Computer Science Student</h4>
+                                <h4 className="font-italic font-weight-light text-center mt-2">Computer Science
+                                    Student</h4>
                                 <table className="table table-bordered mt-1">
                                     <tbody>
                                     <tr>
@@ -36,8 +29,8 @@ class Greeting extends React.Component {
                                             className="fab fa-github fa-lg"/></a></td>
                                         <td className="text-left"><a className="btn btn-outline-primary btn-block"
                                                                      href="https://www.linkedin.com/in/ms10596"
-                                                                     target="_blank"><i
-                                            className="fab fa-linkedin fa-lg"/></a></td>
+                                                                     target="_blank">
+                                            <i className="fab fa-linkedin fa-lg"/></a></td>
                                     </tr>
                                     </tbody>
                                 </table>
@@ -63,16 +56,7 @@ class Greeting extends React.Component {
                             </div>
                         </div>
                         <div className="col-6">
-                            <div className="card mt-3">
-                                <div className="card-body">
-                                    <p className="card-text">
-                                        Finishing my last year at University. Capable of learning new technologies in
-                                        no
-                                        time. Looking for an internship in Back End Development, Data Analysis or
-                                        Machine Learning.
-                                    </p>
-                                </div>
-                            </div>
+                            {/*<About />*/}
                             <div className="card mt-3">
                                 <div className="card-title card-header"><i className="far fa-flag"/> Milestones</div>
                                 <table className="table table-bordered">
@@ -97,18 +81,22 @@ class Greeting extends React.Component {
 
 
                             <div className="card mt-3">
-                                <div className="card-title card-header"><i className="fas fa-certificate"/> Certificates</div>
+                                <div className="card-title card-header"><i className="fas fa-certificate"/> Certificates
+                                </div>
                                 <table className="table table-bordered">
                                     <tbody>
                                     <tr>
                                         <td><img
                                             src="./src/img/svg/deeplearning-ai-icon.png" width="25"/></td>
-                                        <td><a href="https://www.coursera.org/account/accomplishments/specialization/certificate/RF6JN7X9PNGR"> Deep Learning Specialization</a></td>
+                                        <td><a
+                                            href="https://www.coursera.org/account/accomplishments/specialization/certificate/RF6JN7X9PNGR"> Deep
+                                            Learning Specialization</a></td>
                                     </tr>
                                     <tr>
                                         <td><img
                                             src="./src/img/svg/coursera.png" width="25"/></td>
-                                        <td><a href="https://www.coursera.org/account/accomplishments/certificate/GTHY9XTXZ75Q"> Machine
+                                        <td><a
+                                            href="https://www.coursera.org/account/accomplishments/certificate/GTHY9XTXZ75Q"> Machine
                                             Learning by
                                             Stanford
                                             University</a></td>
@@ -144,7 +132,6 @@ class Greeting extends React.Component {
                 </div>
                 <br/>
             </div>
-
         );
     }
 }

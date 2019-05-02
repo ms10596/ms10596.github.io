@@ -1,10 +1,15 @@
 const e = React.createElement;
-
 class Footer extends React.Component {
     render() {
-        return (<footer className="page-footer font-small bg-danger">
+        return (<div>
+            <Greeting />
+            <footer className="page-footer font-small bg-danger">
             <div className="text-center">2019 Copyright: Designed by me</div>
-        </footer>)
+                {/*<Greeting />*/}
+                {/*<Bio />*/}
+        </footer>
+            </div>
+        );
     }
 }
 const domContainer = document.querySelector('#footer');

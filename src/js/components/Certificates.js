@@ -25,7 +25,7 @@ class Certificates extends React.Component {
                         University</a></td>
                 </tr>
                 <tr>
-                    <td className="text-center"><img src="./src/img/svg/udacity.svg" width="25" title="Udacity"/>
+                    <td className="text-center"><img src="./src/img/svg/udacity.svg" width="25" title="Udacity" style={{webkitFilter: "grayscale(80%)"}}/>
                 </td>
                 <td><a href="https://graduation.udacity.com/confirm/6YYLUWEA"> Full Stack Web
                     Development

@@ -1,7 +1,8 @@
 const e = React.createElement;
+
 class Intro extends React.Component {
     render() {
-        return(<div className="card mt-3">
+        return (<div className="card mt-3">
             <h1 className="card-title card-header text-dark">Mohamed Sayed</h1>
             <h4 className="font-italic font-weight-light text-center mt-2">Computer Science
                 Student</h4>
@@ -17,20 +18,15 @@ class Intro extends React.Component {
                 <tr>
                     <td colSpan={2}><i className="fas fa-envelope fa-lg"/> ms10596@gmail.com</td>
                 </tr>
-                <tr>
-                    <td className="text-right"><a className="btn btn-outline-primary btn-block"
-                                                  href="https://www.github.com/ms10596"
-                                                  target="_blank"><i
-                        className="fab fa-github fa-lg"/></a></td>
-                    <td className="text-left"><a className="btn btn-outline-primary btn-block"
-                                                 href="https://www.linkedin.com/in/ms10596"
-                                                 target="_blank">
-                        <i className="fab fa-linkedin fa-lg"/></a></td>
-                </tr>
                 </tbody>
             </table>
+            <div className="btn-group btn-group-lg">
+                <a className="btn btn-outline-dark" href="https://www.github.com/ms10596" target="_blank" style={{width: "50%"}}><i className="fab fa-github fa-lg"/></a>
+                <a className="btn btn-outline-dark" href="https://www.linkedin.com/in/ms10596" target="_blank" style={{width: "50%"}}><i className="fab fa-linkedin fa-lg"/></a>
+            </div>
         </div>)
     }
 }
+
 const domContainer = document.querySelector('#intro');
 ReactDOM.render(e(Intro), domContainer);

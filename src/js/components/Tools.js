@@ -3,7 +3,7 @@ const e = React.createElement;
 class Tools extends React.Component {
     render() {
         return (<div className="card mt-3">
-            <div className="card-title card-header"><i className="fab fa-python"/> Tools</div>
+            <div className="card-title card-header"><i className="fas fa-tools"/> Tools</div>
             <table className="table table-bordered">
 
                 <tbody>
@@ -38,6 +38,13 @@ class Tools extends React.Component {
                 </tr>
                 <tr>
                     <td>Natural Language Toolkit</td>
+                </tr>
+                <tr>
+                    <td rowSpan={3}>Others</td>
+                    <td>Linux</td>
+                </tr>
+                <tr>
+                    <td>Git</td>
                 </tr>
                 </tbody>
             </table>

@@ -4,7 +4,7 @@ class Tools extends React.Component {
     render() {
         return (<div className="card mt-3">
             <div className="card-title card-header"><i className="fas fa-tools"/> Tools</div>
-            <table className="table table-bordered">
+            <table className="table table-bordered table-striped">
 
                 <tbody>
                 <tr>

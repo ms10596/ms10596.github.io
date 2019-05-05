@@ -3,7 +3,7 @@ const e = React.createElement;
 class Tools extends React.Component {
     render() {
         return (<div className="card mt-3">
-            <div className="card-title card-header"><i className="fas fa-book"/> Tools</div>
+            <div className="card-title card-header"><i className="fab fa-python"/> Tools</div>
             <table className="table table-bordered">
 
                 <tbody>
@@ -21,7 +21,7 @@ class Tools extends React.Component {
                     <td>Bootstrap</td>
                 </tr>
                 <tr>
-                    <td rowSpan={4}>Data</td>
+                    <td rowSpan={6}>Data</td>
                     <td>Numpy</td>
                 </tr>
                 <tr>
@@ -32,6 +32,12 @@ class Tools extends React.Component {
                 </tr>
                 <tr>
                     <td>Scikit-learn</td>
+                </tr>
+                <tr>
+                    <td>Matplotlib</td>
+                </tr>
+                <tr>
+                    <td>Natural Language Toolkit</td>
                 </tr>
                 </tbody>
             </table>

@@ -24,6 +24,7 @@ class Intro extends React.Component {
                 <a className="btn btn-outline-dark" href="https://www.github.com/ms10596" target="_blank" style={{width: "50%"}}><i className="fab fa-github fa-lg"/></a>
                 <a className="btn btn-outline-dark" href="https://www.linkedin.com/in/ms10596" target="_blank" style={{width: "50%"}}><i className="fab fa-linkedin fa-lg"/></a>
             </div>
+            <div className="mt-1" />
         </div>)
     }
 }

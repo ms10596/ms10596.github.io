@@ -20,12 +20,14 @@ class Intro extends React.Component {
                 </tr>
                 </tbody>
             </table>
+            <img className="card-img-bottom" src="./src/img/svg/me.jpg" alt="me"/>
+            <div className="mt-1" />
+
             <div className="btn-group btn-group-lg">
                 <a className="btn btn-outline-dark" href="https://www.github.com/ms10596" target="_blank" style={{width: "50%"}}><i className="fab fa-github fa-lg"/></a>
                 <a className="btn btn-outline-dark" href="https://www.linkedin.com/in/ms10596" target="_blank" style={{width: "50%"}}><i className="fab fa-linkedin fa-lg"/></a>
             </div>
             <div className="mt-1" />
-            <img className="card-img-bottom" src="./src/img/svg/me.jpg" alt="me"/>
         </div>)
     }
 }

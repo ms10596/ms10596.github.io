@@ -14,7 +14,7 @@ class Milestones extends React.Component {
                     <td>
                         2015-2019 Cairo University<br/>
                         Bachelor's degree<br/>
-                        Major: Computer Science
+                        Major: Computer Science<br />
                         Minor: Decision Support
                     </td>
                 </tr>

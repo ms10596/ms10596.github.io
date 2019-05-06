@@ -9,7 +9,7 @@ class Milestones extends React.Component {
                     <td>
                         <img src='./src/img/svg/Cairo_University_Crest.png'
                              className="img-thumbnail rounded mx-auto d-block"
-                             width="75" title="Cairo University"/>
+                             width="75" title="Cairo University" style={{webkitFilter: "grayscale(40%)"}}/>
                     </td>
                     <td>
                         2015-2019 Cairo University<br/>

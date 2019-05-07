@@ -1,4 +1,3 @@
-const e = React.createElement;
 class Languages extends React.Component {
     render() {
         return(<div className="card mt-3">
@@ -14,5 +13,4 @@ class Languages extends React.Component {
         </div>)
     }
 }
-const domContainer = document.querySelector('#languages');
-ReactDOM.render(e(Languages), domContainer);
+ReactDOM.render(React.createElement(Languages), document.querySelector('#languages'));

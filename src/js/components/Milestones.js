@@ -1,5 +1,3 @@
-const e = React.createElement;
-
 class Milestones extends React.Component {
     render() {
         return (<div className="card mt-3">
@@ -26,6 +24,4 @@ class Milestones extends React.Component {
         </div>)
     }
 }
-
-const domContainer = document.querySelector('#milestones');
-ReactDOM.render(e(Milestones), domContainer);
+ReactDOM.render(React.createElement(Milestones), document.querySelector('#milestones'));

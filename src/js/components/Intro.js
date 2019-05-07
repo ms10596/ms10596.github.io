@@ -1,5 +1,3 @@
-const e = React.createElement;
-
 class Intro extends React.Component {
     render() {
         return (<div className="card mt-3">
@@ -31,6 +29,4 @@ class Intro extends React.Component {
         </div>)
     }
 }
-
-const domContainer = document.querySelector('#intro');
-ReactDOM.render(e(Intro), domContainer);
+ReactDOM.render(React.createElement(Intro), document.querySelector('#intro'));

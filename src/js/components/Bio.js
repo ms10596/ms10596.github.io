@@ -1,5 +1,3 @@
-const e = React.createElement;
-
 class Bio extends React.Component {
     render() {
         return (<div className="card mt-3">
@@ -13,7 +11,5 @@ class Bio extends React.Component {
         </div>);
     }
 }
-
-const domContainer = document.querySelector('#bio');
-ReactDOM.render(e(Bio), domContainer);
+ReactDOM.render(React.createElement(Bio), document.querySelector('#bio'));
 

@@ -1,5 +1,3 @@
-const e = React.createElement;
-
 class Certificates extends React.Component {
     render() {
         return (<div className="card mt-3">
@@ -36,6 +34,4 @@ class Certificates extends React.Component {
     )
     }
 }
-
-const domContainer = document.querySelector('#certificates');
-ReactDOM.render(e(Certificates), domContainer);
+ReactDOM.render(React.createElement(Certificates), document.querySelector('#certificates'));

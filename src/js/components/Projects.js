@@ -27,6 +27,12 @@ class Projects extends React.Component {
                         website on github hosting service.
                     </td>
                 </tr>
+                <tr>
+                    <td><a href="https://github.com/ms10596/detectioner" target="_blank">detectioner</a></td>
+                    <td>
+                        Face recognition application using <b>Convolution Neural Network</b>. Dataset was gathered from team members. The code was written in <b>python</b> using <b>Keras</b> framework. Validation accuracy has reached <b>0.82</b>.
+                    </td>
+                </tr>
                 </tbody>
             </table>
         </div>)

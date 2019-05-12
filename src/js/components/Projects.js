@@ -22,9 +22,7 @@ class Projects extends React.Component {
                 <tr>
                     <td><a href="https://github.com/ms10596/ms10596.github.io" target="_blank">My personal resume</a>
                     </td>
-                    <td> I have built this website using React which is a
-                        frontend <b>javascript</b> framework, <b>HTML</b> and <b>Bootstrap</b>. I have deployed this
-                        website on github hosting service.
+                    <td> Simple single page resume using <b>HTML</b>, <b>CSS</b> and <b>Bootstrap</b>. Every card in that resume is a separate <b>react</b> component for easy manipulation and reusability.
                     </td>
                 </tr>
                 <tr>

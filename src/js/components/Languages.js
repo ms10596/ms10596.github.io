@@ -7,7 +7,6 @@ class Languages extends React.Component {
                 <tr><td>Python</td></tr>
                 <tr><td>Java</td></tr>
                 <tr><td>C++</td></tr>
-                <tr><td>Javascript</td></tr>
                 </tbody>
             </table>
         </div>)

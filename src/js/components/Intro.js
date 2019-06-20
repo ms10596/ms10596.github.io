@@ -19,14 +19,19 @@ class Intro extends React.Component {
                 </tbody>
             </table>
             <img className="card-img-bottom" src="./src/img/svg/me.jpg" alt="me"/>
-            <div className="mt-1" />
+            {/*<img src="./src/img/svg/me2.jpg" alt="me"/>*/}
+            
+            <div className="mt-1"/>
 
             <div className="btn-group btn-group-lg">
-                <a className="btn btn-outline-dark" href="https://www.github.com/ms10596" target="_blank" style={{width: "50%"}}><i className="fab fa-github fa-lg"/></a>
-                <a className="btn btn-outline-dark" href="https://www.linkedin.com/in/ms10596" target="_blank" style={{width: "50%"}}><i className="fab fa-linkedin fa-lg"/></a>
+                <a className="btn btn-outline-dark" href="https://www.github.com/ms10596" target="_blank"
+                   style={{width: "50%"}}><i className="fab fa-github fa-lg"/></a>
+                <a className="btn btn-outline-dark" href="https://www.linkedin.com/in/ms10596" target="_blank"
+                   style={{width: "50%"}}><i className="fab fa-linkedin fa-lg"/></a>
             </div>
-            <div className="mt-1" />
+            <div className="mt-1"/>
         </div>)
     }
 }
+
 ReactDOM.render(React.createElement(Intro), document.querySelector('#intro'));

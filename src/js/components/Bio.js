@@ -3,9 +3,7 @@ class Bio extends React.Component {
         return (<div className="card mt-3">
             <div className="card-body">
                 <p className="card-text">
-                    Finishing my last year at University. Capable of learning new technologies in no time. Looking
-                    for
-                    an internship in Back End Development, Data Analysis or Machine Learning.
+                    A fresh graduate.
                 </p>
             </div>
         </div>);

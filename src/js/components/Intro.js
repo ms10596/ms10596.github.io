@@ -7,7 +7,7 @@ class Intro extends React.Component {
             <table className="table table-bordered mt-1">
                 <tbody>
                 <tr>
-                    <td colSpan={2}><i className="fas fa-phone fa-lg"/> +201146613779</td>
+                    <td colSpan={2}><i className="fas fa-phone fa-lg"/> +20123456789</td>
                 </tr>
                 <tr>
                     <td colSpan={2}><i className="fas fa-home fa-lg"/> 2XMM+83 Sheikh Zayed City

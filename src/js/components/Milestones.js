@@ -4,6 +4,13 @@ class Milestones extends React.Component {
             <div className="card-title card-header"><i className="far fa-flag"/> Milestones</div>
             <table className="table table-bordered">
                 <tr>
+                    <td className="text-center"><img src='./src/img/svg/agolo.png'/></td>
+                    <td>
+                        2019-07-1 Agolo<br/>
+                        NLP Intern Engineer
+                    </td>
+                </tr>
+                <tr>
                     <td className="text-center">
                         <img src='./src/img/svg/Cairo_University_Crest.png' title="Cairo University" width="50px" style={{webkitFilter: "grayscale(40%)"}}/>
                     </td>

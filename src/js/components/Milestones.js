@@ -4,7 +4,10 @@ class Milestones extends React.Component {
             <div className="card-title card-header"><i className="far fa-flag"/> Milestones</div>
             <table className="table table-bordered">
                 <tr>
-                    <td className="text-center"><a href="https://www.agolo.com/team"><img src='./src/img/svg/agolo.png' title="Agolo" width="50px"/></a></td>
+                    <td className="text-center">
+                <a href="https://www.agolo.com/team" target="_blank">
+                <img src='./src/img/svg/agolo.png' title="Agolo" width="50px"/>
+                </a></td>
                     <td>
                         2019-07-1 Agolo<br/>
                         NLP Intern Engineer
@@ -12,7 +15,7 @@ class Milestones extends React.Component {
                 </tr>
                 <tr>
                     <td className="text-center">
-                        <a href="https://fci.cu.edu.eg/Home">
+                        <a href="https://fci.cu.edu.eg/Home" target="_blank">
                 <img src='./src/img/svg/Cairo_University_Crest.png' title="Cairo University" width="50px" style={{webkitFilter: "grayscale(40%)"}}/>
                 </a>
                     </td>

@@ -2,8 +2,7 @@ class Intro extends React.Component {
     render() {
         return (<div className="card mt-3">
             <h1 className="card-title card-header text-dark">Mohamed Sayed</h1>
-            <h4 className="font-italic font-weight-light text-center mt-2">Computer Science
-                Student</h4>
+            <h4 className="font-italic font-weight-light text-center mt-2">Data Scientist</h4>
             <table className="table table-bordered mt-1">
                 <tbody>
                 <tr>

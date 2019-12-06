@@ -5,7 +5,7 @@ class Milestones extends React.Component {
             <table className="table table-bordered">
                 <tr>
                     <td className="text-center">
-                <a href="https://www.agolo.com/team" target="_blank">
+                <a href="https://www.agolo.com" target="_blank">
                 <img src='./src/img/svg/agolo.png' title="Agolo" width="50px"/>
                 </a></td>
                     <td>

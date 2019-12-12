@@ -9,8 +9,8 @@ class Milestones extends React.Component {
                 <img src='./src/img/svg/agolo.png' title="Agolo" width="50px"/>
                 </a></td>
                     <td>
-                        2019-07-1 Agolo<br/>
-                        NLP Intern Engineer
+                        2019-07-1 <i className="fas fa-arrow-right"></i> 2019-10-1<br/> Agolo<br/>
+                        Natural Language Processing Engineering Internship
                     </td>
                 </tr>
                 <tr>
@@ -20,7 +20,7 @@ class Milestones extends React.Component {
                 </a>
                     </td>
                     <td>
-                        2015-2019 Cairo University<br/>
+                        2015 <i className="fas fa-arrow-right"></i> 2019<br/> Cairo University<br/>
                         Bachelor's degree<br/>
                         Major: Computer Science<br />
                         Minor: Decision Support

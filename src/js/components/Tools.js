@@ -44,6 +44,9 @@ class Tools extends React.Component {
                 <tr>
                     <td>Git</td>
                 </tr>
+                <tr>
+                    <td>Docker</td>
+                </tr>
                 </tbody>
             </table>
         </div>)

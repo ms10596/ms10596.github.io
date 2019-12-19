@@ -6,7 +6,7 @@ class Milestones extends React.Component {
                 <tr>
                     <td className="text-center"><i className="fas fa-fighter-jet fa-3x" /></td>
                     <td>
-                        2020-04-1 <i className="fas fa-arrow-right"></i> 2021-06-1<br/> <strong>Egyptian Armed Forces</strong><br/>
+                        2020-04-1 <i className="fas fa-arrow-right"></i> ~<br/> <strong>Egyptian Armed Forces</strong><br/>
                         Soldier
                     </td>
                 </tr>
@@ -31,7 +31,7 @@ class Milestones extends React.Component {
                 </tr>
                 <tr>
                     <td className="text-center"><i className="fas fa-baby fa-3x" /></td>
-                    <td>1996-05-10</td>
+                    <td>1996-05-10   <i className="fas fa-level-up-alt"></i></td>
                 </tr>
             </table>
         </div>)

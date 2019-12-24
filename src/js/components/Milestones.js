@@ -24,14 +24,14 @@ class Milestones extends React.Component {
                 </a>
                     </td>
                     <td>
-                        2015 <i className="fas fa-arrow-right"></i> 2019<br/> <strong>Cairo University</strong><br/>
+                        2015-09-25 <i className="fas fa-arrow-right"></i> 2019-06-25<br/> <strong>Cairo University</strong><br/>
                         Bachelor's degree, Computer Science<br/>
                         <em>Faculty of Computers and ِArtificial Intelligence</em>
                     </td>
                 </tr>
                 <tr>
                     <td className="text-center"><i className="fas fa-baby fa-3x" /></td>
-                    <td>1996-05-10   <i className="fas fa-level-up-alt"></i></td>
+                    <td>1996-05-10  </td>
                 </tr>
             </table>
         </div>)

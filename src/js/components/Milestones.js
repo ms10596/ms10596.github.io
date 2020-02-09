@@ -4,6 +4,15 @@ class Milestones extends React.Component {
             <div className="card-title card-header"><i className="far fa-flag"/> Milestones</div>
             <table className="table table-bordered">
                 <tr>
+                    <td className="text-center"><a href="https://lyranalytics.com" target="_blank"><img width="50px" height="60px"
+                                                                                                 src="./src/img/svg/cropped-lyra-1-3.png"
+                                                                                                 alt="Lyra" /></a></td>
+                    <td>
+                        2020-02-10 <i className="fas fa-arrow-right"></i> ~<br/> <strong>Lyra</strong><br/>
+                        AI Launchpad
+                    </td>
+                </tr>
+                <tr>
                     <td className="text-center"><a href="https://www.agolo.com" target="_blank"><img src='./src/img/svg/agolo.png' title="Agolo" width="50px"/></a></td>
                     <td>
                         2019-07-1 <i className="fas fa-arrow-right"></i> 2019-10-1<br/> <strong>Agolo</strong><br/>

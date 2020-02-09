@@ -7,6 +7,12 @@ class Certificates extends React.Component {
                 <tbody>
                 <tr>
                     <td className="text-center"><img
+                        src="./src/img/svg/udacity.svg" width="25" title="Udacity" style={{webkitFilter: "grayscale(80%)"}}/></td>
+                    <td><a
+                        href="https://confirm.udacity.com/6YYLUWEA"> Cloud Developer for Enterprise Nanodegree</a></td>
+                </tr>
+                <tr>
+                    <td className="text-center"><img
                         src="./src/img/svg/deeplearning-ai-icon.png" width="25" title="Deeplearning.ai"/></td>
                     <td><a
                         href="https://www.coursera.org/account/accomplishments/specialization/certificate/RF6JN7X9PNGR"> Deep

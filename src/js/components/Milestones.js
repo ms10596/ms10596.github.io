@@ -4,8 +4,8 @@ class Milestones extends React.Component {
             <div className="card-title card-header"><i className="far fa-flag"/> Milestones</div>
             <table className="table table-bordered">
                 <tr>
-                    <td className="text-center"><a href="https://lyranalytics.com" target="_blank"><img width="50px" height="60px"
-                                                                                                 src="./src/img/svg/cropped-lyra-1-3.png"
+                    <td className="text-center"><a href="https://lyranalytics.com" target="_blank"><img  height="60px"
+                                                                                                 src="https://media-exp1.licdn.com/dms/image/C4D0BAQHrMuIlyTBdGw/company-logo_200_200/0?e=1589414400&v=beta&t=g9Dfs3SLEuVFhcRmhbTrC7KNCSq5Y_MrOkt4Jj37KOM"
                                                                                                  alt="Lyra" /></a></td>
                     <td>
                         2020-02-10 <i className="fas fa-arrow-right"></i> ~<br/> <strong>Lyra</strong><br/>

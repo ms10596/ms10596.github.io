@@ -13,7 +13,7 @@ class Milestones extends React.Component {
                     </td>
                 </tr>
                 <tr>
-                    <td className="text-center"><a href="https://www.agolo.com" target="_blank"><img src='./src/img/svg/agolo.png' title="Agolo" height="60px"/></a></td>
+                    <td className="text-center"><a href="https://www.agolo.com" target="_blank"><img src='https://www.agolo.com/images/favicon.ico' title="Agolo" height="60px"/></a></td>
                     <td>
                         2019-07-1 <i className="fas fa-arrow-right"></i> 2019-10-1<br/> <strong>Agolo</strong><br/>
                         Natural Language Processing Engineering Internship
@@ -22,7 +22,7 @@ class Milestones extends React.Component {
                 <tr>
                     <td className="text-center">
                         <a href="https://fci.cu.edu.eg/Home" target="_blank">
-                <img src='./src/img/svg/Cairo_University_Crest.png' title="Cairo University" height="60px" style={{webkitFilter: "grayscale(40%)"}}/>
+                <img src='https://fci.cu.edu.eg/images/logo_fci.png' title="Cairo University" height="60px" style={{webkitFilter: "grayscale(40%)"}}/>
                 </a>
                     </td>
                     <td>

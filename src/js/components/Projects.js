@@ -5,8 +5,8 @@ class Projects extends React.Component {
             <table className="table table-bordered table-striped">
                 <tbody>
                 <tr>
-                    <td><a href="https://github.com/ms10596/scrape" target="_blank">SCRAPEST</a></td>
-                    <td> Scraping engine that has been deployed onto AWS kubernetes cluster.It scrapes and store news articles in an elasticsearch instance.
+                    <td><a href="https://github.com/ms10596/scrape" target="_blank">scrapest</a></td>
+                    <td> Scraping engine based on <b>Python Scrapy</b> module. Deployed onto <b>AWS kubernetes</b> cluster. It scrapes and stores Egyptian news articles in an <b>elasticsearch</b> instance. I have used <b>Travis continuous integration</b> for smooth rolling updates while pushing changes on the remote branch.
                     </td>
                 </tr>
                 <tr>
@@ -20,8 +20,7 @@ class Projects extends React.Component {
                 <tr>
                     <td><a href="https://github.com/ms10596/catalog" target="_blank">catalog</a></td>
                     <td> TV series management system using <b>Python</b>-Flask as a micro
-                        framework, <b>SqlAlchemy</b> as a operational relational mapping and <b>Amazon Web
-                            Services</b> for deployment.
+                        framework, <b>SqlAlchemy</b> as a operational relational mapping and <b>AWS lightsail</b> instance for deployment.
                     </td>
                 </tr>
                 <tr>

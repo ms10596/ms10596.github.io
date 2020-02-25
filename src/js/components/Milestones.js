@@ -4,10 +4,10 @@ class Milestones extends React.Component {
             <div className="card-title card-header"><i className="far fa-flag"/> Milestones</div>
             <table className="table table-bordered">
                 <tr>
-                    <td className="text-center">
+                    <td class="text-center" style={{width: "15px"}}>
                         <a href="https://lyranalytics.com" target="_blank">
                             <img
-                            height="65px" width="60px"
+                            height="70px" width="70px"
                             src="https://media-exp1.licdn.com/dms/image/C4D0BAQHrMuIlyTBdGw/company-logo_200_200/0?e=1589414400&v=beta&t=g9Dfs3SLEuVFhcRmhbTrC7KNCSq5Y_MrOkt4Jj37KOM"
                             alt="Lyra"/>
                         </a>
@@ -20,7 +20,7 @@ class Milestones extends React.Component {
                 <tr>
                     <td className="text-center"><a href="https://www.agolo.com" target="_blank">
                         <img
-                        src='https://www.agolo.com/images/favicon.ico' title="Agolo" height="65px" width="60px"/></a>
+                        src='https://www.agolo.com/images/favicon.ico' title="Agolo" height="70px" width="70px"/></a>
                     </td>
                     <td>
                         2019-07-1 <i className="fas fa-arrow-right"></i> 2019-10-1<br/> <strong>Agolo</strong><br/>
@@ -30,8 +30,8 @@ class Milestones extends React.Component {
                 <tr>
                     <td className="text-center">
                         <a href="https://fci.cu.edu.eg/Home" target="_blank">
-                            <img src='https://fci.cu.edu.eg/images/logo_fci.png' title="Cairo University" height="65px"
-                                 width="60px"/>
+                            <img src='https://fci.cu.edu.eg/images/logo_fci.png' title="Cairo University" height="70px"
+                                 width="70px"/>
                         </a>
                     </td>
                     <td>

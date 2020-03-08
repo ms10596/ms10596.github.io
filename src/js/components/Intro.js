@@ -9,7 +9,7 @@ class Intro extends React.Component {
                         <td colSpan={2}><i className="fas fa-phone fa-lg" /> +201146613779</td>
                     </tr>
                     <tr>
-                        <td colSpan={2}><i className="fas fa-home fa-lg" /> 2XMM+83 Sheikh Zayed City
+                        <td colSpan={2}><i className="fas fa-home fa-lg" /> Giza, Sheikh Zayed City
                     </td>
                     </tr>
                     <tr>

@@ -25,13 +25,6 @@ class Milestones extends React.Component {
                 note: "Faculty of Computers and Artificial Intelligence",
                 logo_link: "https://fci.cu.edu.eg/images/logo_fci.png",
                 link: "https://fci.cu.edu.eg/Home"
-            },
-            {
-                company: "",
-                role: "",
-                start_date: "1996-05-10",
-                logo_link: "./src/img/svg/small_me.jpg",
-                end_date: ""
             }
         ]
     }

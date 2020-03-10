@@ -1,8 +1,8 @@
 class Tools extends React.Component {
     state = {
-        "Data": ["Numpy", "Keras", "Pandas", "Scikit-learn", "Matplotlib", "NLTK"],
-        "Web": ["Flask", "PostgreSQL", "React", "Bootstrap"],
-        "Others": ["Linux", "Git", "Docker", "Kubernetes"]
+        "Data": ["Numpy", "Pandas", "Matplotlib", "NLTK", "Keras", "Scikit-learn"],
+        "Backend": ["Flask", "Docker", "Kubernetes", "Linux", "PostgreSQL", "Elastic Search"],
+        "Others": ["Git", "React", "Bootstrap"]
     }
 
     render() {

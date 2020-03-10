@@ -4,17 +4,17 @@ class Projects extends React.Component {
             {
                 name: "scrapest",
                 link: "https://github.com/ms10596/scrape",
-                description: "Scraping engine based on Python Scrapy module. Deployed onto AWS kubernetes cluster. It scrapes and stores Egyptian news articles in an elasticsearch instance. I have used Travis continuous integration for smooth rolling updates while pushing changes on the remote branch."
+                description: "Scraping engine based on Python Scrapy module. Deployed onto AWS Kubernetes cluster. It scrapes and stores Egyptian news articles in an elasticsearch instance. I have used Travis CI/CD for smooth rolling updates while pushing changes on the remote branch."
             },
             {
                 name: "match",
                 link: "https://github.com/ms10596/match",
-                description: "My graduation project is based on a popular natural language processing problem which is Text Readability Assessment. We aim in this project to classify any given text to one of 3 levels Easy, Intermediate and hard. We are using OneStopEnglish corpus to build our deep learning model. All text processing, learning and deployment is done using Python."
+                description: "My graduation project is based on a popular NLP problem which is Text Readability Assessment. We aim in this project to classify any given text to one of 3 levels Easy, Intermediate and hard. We have done multiple experiments using different types of network architecture like LSTM and CNN using Keras framework and based on OneStopEnglish corpus."
             },
             {
                 name: "catalog",
                 link: "https://github.com/ms10596/catalog",
-                description: "TV series management system using Python-Flask as a micro framework, SqlAlchemy as a operational relational mapping and AWS lightsail instance for deployment."
+                description: "TV series management system with CRUD operations based Flask as a web server, SqlAlchemy as a operational relational mapping and AWS lightsail instance for deployment."
             },
             {
                 name: "personal-resume",
@@ -24,9 +24,10 @@ class Projects extends React.Component {
             {
                 name: "detectioner",
                 link: "https://github.com/ms10596/detectioner",
-                description: "Face recognition application using Convolution Neural Network. Dataset was gathered from team members. The code was written in python using Keras framework. Validation accuracy has reached 0.82."
+                description: "Face recognition application using Convolution Neural Network. Dataset was gathered from team members. The code was written in python using Keras framework. Validation accuracy has reached 82%."
             }
-        ]
+        ],
+        buzzwords: ["html", "css", "js","lstm","cnn","nlp", "ci/cd","aws","python","numpy", "pandas", "matplotlib", "nltk", "keras", "scikit-learn", "flask", "docker", "kubernetes", "linux", "postgresql", "elasticsearch", "git", "react", "bootstrap"]
     }
 
     render() {
@@ -44,7 +45,21 @@ class Projects extends React.Component {
                                     </a>
                                 </td>
                                 <td>
-                                    {project.description}
+                                    {
+                                        project.description.split(" ").map((word) => {
+                                            console.log(word)
+                                           if(this.state.buzzwords.includes(word.toLowerCase())) {
+                                                return (
+                                               <strong>{word} </strong>
+                                           )
+                                           }
+                                           else {
+                                               return (word+" ")
+                                           }
+
+                                        })
+                                    }
+
                                 </td>
                             </tr>)
                     })

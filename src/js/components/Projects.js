@@ -24,10 +24,10 @@ class Projects extends React.Component {
             {
                 name: "detectioner",
                 link: "https://github.com/ms10596/detectioner",
-                description: "Face recognition application using Convolution Neural Network. Dataset was gathered from team members. The code was written in python using Keras framework. Validation accuracy has reached 82%."
+                description: "Face recognition application using CNN. Dataset was gathered from team members. The code was written in python using Keras framework. Validation accuracy has reached 82%."
             }
         ],
-        buzzwords: ["html", "css", "js","lstm","cnn","nlp", "ci/cd","aws","python","numpy", "pandas", "matplotlib", "nltk", "keras", "scikit-learn", "flask", "docker", "kubernetes", "linux", "postgresql", "elasticsearch", "git", "react", "bootstrap"]
+        buzzwords: {"html":true, "css":true, "js":true,"lstm":true,"cnn":true,"nlp":true, "ci/cd":true,"aws":true,"python":true,"numpy":true, "pandas":true, "matplotlib":true, "nltk":true, "keras":true, "scikit-learn":true, "flask":true, "docker":true, "kubernetes":true, "linux":true, "postgresql":true, "elasticsearch":true, "git":true, "react":true, "bootstrap":true}
     }
 
     render() {
@@ -46,9 +46,9 @@ class Projects extends React.Component {
                                 </td>
                                 <td>
                                     {
-                                        project.description.split(" ").map((word) => {
+                                        project.description.split(/[\s]/).map((word) => {
                                             console.log(word)
-                                           if(this.state.buzzwords.includes(word.toLowerCase())) {
+                                           if(this.state.buzzwords[word.toLowerCase()] || this.state.buzzwords[word.slice(0,word.length-1).toLowerCase()]) {
                                                 return (
                                                <strong>{word} </strong>
                                            )

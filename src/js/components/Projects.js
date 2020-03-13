@@ -27,7 +27,32 @@ class Projects extends React.Component {
                 description: "Face recognition application using CNN. Dataset was gathered from team members. The code was written in python using Keras framework. Validation accuracy has reached 82%."
             }
         ],
-        buzzwords: {"html":true, "css":true, "js":true,"lstm":true,"cnn":true,"nlp":true, "ci/cd":true,"aws":true,"python":true,"numpy":true, "pandas":true, "matplotlib":true, "nltk":true, "keras":true, "scikit-learn":true, "flask":true, "docker":true, "kubernetes":true, "linux":true, "postgresql":true, "elasticsearch":true, "git":true, "react":true, "bootstrap":true}
+        buzzwords: {
+            "html": true,
+            "css": true,
+            "js": true,
+            "lstm": true,
+            "cnn": true,
+            "nlp": true,
+            "ci/cd": true,
+            "aws": true,
+            "python": true,
+            "numpy": true,
+            "pandas": true,
+            "matplotlib": true,
+            "nltk": true,
+            "keras": true,
+            "scikit-learn": true,
+            "flask": true,
+            "docker": true,
+            "kubernetes": true,
+            "linux": true,
+            "postgresql": true,
+            "elasticsearch": true,
+            "git": true,
+            "react": true,
+            "bootstrap": true
+        }
     }
 
     render() {
@@ -48,16 +73,16 @@ class Projects extends React.Component {
                                     {
                                         project.description.split(/[\s]/).map((word) => {
                                             console.log(word)
-                                           if(this.state.buzzwords[word.toLowerCase()] || this.state.buzzwords[word.slice(0,word.length-1).toLowerCase()]) {
+                                            if (this.state.buzzwords[word.toLowerCase()] || this.state.buzzwords[word.slice(0, word.length - 1).toLowerCase()]) {
                                                 return (
-                                               <strong>{word} </strong>
-                                           )
-                                           }
-                                           else {
-                                               return (word+" ")
-                                           }
+                                                    <ins>{word} </ins>
+                                                )
+                                            }
+                                    else {
+                                    return (word+" ")
+                                }
 
-                                        })
+                                    })
                                     }
 
                                 </td>

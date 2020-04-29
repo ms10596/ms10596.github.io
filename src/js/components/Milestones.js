@@ -2,13 +2,22 @@ class Milestones extends React.Component {
     states = {
         milestones: [
             {
-                company: "Lyra",
-                role: "AI Launchpad",
-                start_date: "2020-02",
-                end_date: "2020-04",
-                logo_link: "https://media-exp1.licdn.com/dms/image/C4D0BAQHrMuIlyTBdGw/company-logo_200_200/0?e=1589414400&v=beta&t=g9Dfs3SLEuVFhcRmhbTrC7KNCSq5Y_MrOkt4Jj37KOM",
-                link:"https://lyranalytics.com",
-                duration: "2 mos"
+                company: "Optomatica",
+                role: "Data Scientist",
+                start_date: "2020-04",
+                end_date: "present",
+                logo_link: "https://optomatica.com/wp-content/uploads/thegem-logos/logo_889ae4ea4664255e79f396c06e98351a_1x.png",
+                link: "https://optomatica.com/"
+
+            },
+            {
+                company: "Udacity",
+                role: "Session Lead",
+                start_date: "2019-06",
+                end_date: "2020-10",
+                logo_link: "./src/img/svg/udacity.svg",
+                link:"https://udacity.com",
+                duration: "4 mos"
             },
             {
                 company: "Agolo",

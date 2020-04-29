@@ -11,22 +11,22 @@ class Milestones extends React.Component {
 
             },
             {
-                company: "Udacity",
-                role: "Session Lead",
-                start_date: "2019-06",
-                end_date: "2020-10",
-                logo_link: "./src/img/svg/udacity.svg",
-                link:"https://udacity.com",
-                duration: "4 mos"
-            },
-            {
                 company: "Agolo",
                 role: "Natural Language Processing Engineering Internship",
                 start_date: "2019-07",
                 end_date: "2019-10",
                 logo_link: "https://www.agolo.com/images/favicon.ico",
-                link:"https://www.agolo.com",
+                link: "https://www.agolo.com",
                 duration: "3 mos"
+            },
+            {
+                company: "Udacity",
+                role: "Session Lead",
+                start_date: "2019-06",
+                end_date: "2020-10",
+                logo_link: "./src/img/svg/udacity.svg",
+                link: "https://udacity.com",
+                duration: "4 mos"
             },
             {
                 company: "Cairo University",
@@ -50,11 +50,12 @@ class Milestones extends React.Component {
                         return (<tr>
                             <td className="text-center" style={{width: "15px"}}>
                                 <a href={milestone.link} target="_blank">
-                                    <img height="70px" width="70px" src={milestone.logo_link} />
+                                    <img height="70px" width="70px" src={milestone.logo_link}/>
                                 </a>
                             </td>
                             <td>
-                                {milestone.start_date} <i className="fas fa-arrow-right" /> {milestone.end_date} . {milestone.duration}<br/>
+                                {milestone.start_date} <i
+                                className="fas fa-arrow-right"/> {milestone.end_date} . {milestone.duration}<br/>
                                 <strong>{milestone.company}</strong><br/>
                                 {milestone.role}<br/>
                                 <em>{milestone.note}</em>

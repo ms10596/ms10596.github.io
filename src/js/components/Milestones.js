@@ -6,7 +6,7 @@ class Milestones extends React.Component {
                 role: "Data Scientist",
                 start_date: "2020-04",
                 end_date: "present",
-                logo_link: "https://optomatica.com/wp-content/uploads/thegem-logos/logo_889ae4ea4664255e79f396c06e98351a_1x.png",
+                logo_link: "https://optomatica.com/wp-content/uploads/thegem-logos/logo_0b9c89473cb8fbb09958b6be57d67bd0_1x.png",
                 link: "https://optomatica.com/"
 
             },

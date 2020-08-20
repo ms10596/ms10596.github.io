@@ -2,8 +2,14 @@ class Certificates extends React.Component {
     state = {
         certificates: [
             {
+                name: "Mathematics for Machine Learning Specialization",
+                link: "https://www.coursera.org/account/accomplishments/specialization/certificate/P22MNQQMTABD",
+                logo: "./src/img/svg/coursera.png",
+                issuer: "Udacity"
+            },
+            {
                 name: "Cloud Developer for Enterprise Nanodegree",
-                link: "https://confirm.udacity.com/6YYLUWEA",
+                link: "https://confirm.udacity.com/QSKEQRAQ",
                 logo: "./src/img/svg/udacity.svg",
                 issuer: "Udacity"
             },

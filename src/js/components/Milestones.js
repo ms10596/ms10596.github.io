@@ -23,7 +23,7 @@ class Milestones extends React.Component {
                 company: "Udacity",
                 role: "Session Lead",
                 start_date: "2019-06",
-                end_date: "2020-10",
+                end_date: "2019-10",
                 logo_link: "./src/img/svg/udacity.svg",
                 link: "https://udacity.com",
                 duration: "4 mos"

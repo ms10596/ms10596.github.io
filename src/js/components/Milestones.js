@@ -58,7 +58,7 @@ class Milestones extends React.Component {
                                 className="fas fa-arrow-right"/> {milestone.end_date} . {milestone.duration}<br/>
                                 <strong>{milestone.company}</strong><br/>
                                 {milestone.role}<br/>
-                                <em>{milestone.note}</em>
+                                 <em>{milestone.note}</em>
                             </td>
                         </tr>)
                     })

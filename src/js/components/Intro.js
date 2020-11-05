@@ -13,7 +13,7 @@ class Intro extends React.Component {
                     </td>
                     </tr>
                     <tr>
-                        <td colSpan={2}><i className="fas fa-envelope fa-lg" /> ms10596@gmail.com</td>
+                        <td colSpan={2}><i className="fas fa-envelope fa-lg" /> ms10596 [at] gmail [dot] com</td>
                     </tr>
                 </tbody>
             </table>

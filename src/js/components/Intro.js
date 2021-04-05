@@ -24,9 +24,12 @@ class Intro extends React.Component {
 
             <div className="btn-group btn-group-lg">
                 <a className="btn btn-outline-dark" href="https://www.github.com/ms10596" target="_blank"
-                    style={{ width: "50%" }}><i className="fab fa-github fa-lg" /></a>
+                    style={{ width: "30%" }}><i className="fab fa-github fa-lg" /></a>
                 <a className="btn btn-outline-dark" href="https://www.linkedin.com/in/ms10596" target="_blank"
-                    style={{ width: "50%" }}><i className="fab fa-linkedin fa-lg" /></a>
+                    style={{ width: "30%" }}><i className="fab fa-linkedin fa-lg" /></a>
+                <a className="btn btn-outline-dark" href="https://stackoverflow.com/users/7954107/mohamed-sayed" target="_blank"
+                    style={{ width: "30%" }}><i className="fab fa-stack-overflow" /></a>
+                
             </div>
             <div className="mt-1" />
         </div>)

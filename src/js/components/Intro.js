@@ -5,9 +5,9 @@ class Intro extends React.Component {
             <h4 className="font-italic font-weight-light text-center mt-2">Computer Scientist</h4>
             <table className="table table-bordered mt-1">
                 <tbody>
-                    <tr>
+                    {/* <tr>
                         <td colSpan={2}><i className="fas fa-phone fa-lg" /> +201146613779</td>
-                    </tr>
+                    </tr> */}
                     <tr>
                         <td colSpan={2}><i className="fas fa-home fa-lg" /> Giza, Sheikh Zayed City
                     </td>

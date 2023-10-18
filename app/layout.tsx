@@ -1,5 +1,6 @@
 import "./globals.css";
 
+import Footer from "./resume/Footer";
 import { Inter } from "next/font/google";
 import type { Metadata } from "next";
 
@@ -17,7 +18,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-dark`}>{children}</body>
+      <body className={`${inter.className} bg-dark`}>
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

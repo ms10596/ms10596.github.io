@@ -1,3 +1,5 @@
+import { FaToolbox } from "react-icons/fa6";
+
 function Tools() {
   const state = {
     Data: ["Numpy", "Pandas", "Matplotlib", "NLTK", "Keras", "Scikit-learn"],
@@ -14,18 +16,18 @@ function Tools() {
   return (
     <div className="card mt-3">
       <div className="card-title card-header">
-        <i className="fas fa-tools" /> Tools
+        <FaToolbox /> Tools
       </div>
       <table className="table table-bordered table-striped">
-        {Object.entries(state).map(([key, value]) => {
+        {Object.entries(state).map(([key, value], i) => {
           return (
-            <tbody>
+            <tbody key={i}>
               <tr>
                 <td rowSpan={value.length + 1}>{key}</td>
               </tr>
-              {value.map((skill) => {
+              {value.map((skill, j) => {
                 return (
-                  <tr>
+                  <tr key={`${i}${j}`}>
                     <td>{skill}</td>
                   </tr>
                 );

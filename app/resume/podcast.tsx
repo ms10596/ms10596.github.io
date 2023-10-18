@@ -1,8 +1,10 @@
+import { FaHeadphones } from "react-icons/fa6";
+
 function Podcast() {
   return (
     <div className="card mt-3">
       <div className="card-title card-header">
-        <i className="fa fa-headphones"></i> Listen to me
+        <FaHeadphones /> Listen to me
       </div>
       <div className="card-body">
         <iframe

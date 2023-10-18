@@ -1,3 +1,7 @@
+import { FaArrowRight, FaFlag } from "react-icons/fa6";
+
+import Image from "next/image";
+
 function Milestones() {
   const milestones = [
     {
@@ -5,7 +9,7 @@ function Milestones() {
       role: "Data Scientist",
       start_date: "2020-04",
       end_date: "present",
-      logo_link: "./src/img/svg/opto.png",
+      logo_link: "/opto.png",
       link: "https://optomatica.com/",
     },
     {
@@ -13,7 +17,7 @@ function Milestones() {
       role: "Natural Language Processing Engineering Internship",
       start_date: "2019-07",
       end_date: "2019-10",
-      logo_link: "https://www.agolo.com/images/favicon.ico",
+      logo_link: "/agolo.ico",
       link: "https://www.agolo.com",
       duration: "3 mos",
     },
@@ -22,7 +26,7 @@ function Milestones() {
       role: "Session Lead",
       start_date: "2019-06",
       end_date: "2019-10",
-      logo_link: "./src/img/svg/udacity.svg",
+      logo_link: "/udacity.svg",
       link: "https://udacity.com",
       duration: "4 mos",
     },
@@ -32,7 +36,7 @@ function Milestones() {
       start_date: "2015-09",
       end_date: "2019-06",
       note: "Faculty of Computers and Artificial Intelligence",
-      logo_link: "https://fci.cu.edu.eg/images/logo_fci.png",
+      logo_link: "/fci.ico",
       link: "https://fci.cu.edu.eg/Home",
       duration: "4 yrs",
     },
@@ -40,20 +44,25 @@ function Milestones() {
   return (
     <div className="card mt-3">
       <div className="card-title card-header">
-        <i className="far fa-flag" /> Milestones
+        <FaFlag /> Milestones
       </div>
       <table className="table table-bordered">
-        {milestones.map((milestone) => {
+        {milestones.map((milestone, i) => {
           return (
-            <tr>
+            <tr key={i}>
               <td className="text-center" style={{ width: "15px" }}>
                 <a href={milestone.link} target="_blank">
-                  <img height="70px" width="70px" src={milestone.logo_link} />
+                  <Image
+                    height={70}
+                    width={70}
+                    src={milestone.logo_link}
+                    alt={`${milestone.company} logo`}
+                  />
                 </a>
               </td>
               <td>
-                {milestone.start_date} <i className="fas fa-arrow-right" />{" "}
-                {milestone.end_date} . {milestone.duration}
+                {milestone.start_date} <FaArrowRight size={30} /> {milestone.end_date} .{" "}
+                {milestone.duration}
                 <br />
                 <strong>{milestone.company}</strong>
                 <br />

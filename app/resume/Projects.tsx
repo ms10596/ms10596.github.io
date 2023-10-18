@@ -1,3 +1,5 @@
+import { FaHelmetSafety } from "react-icons/fa6";
+
 function Projects() {
   const projects = [
     {
@@ -60,25 +62,25 @@ function Projects() {
   return (
     <div className="card mt-3">
       <div className="card-title card-header">
-        <i className="fas fa-tasks" /> Recent Projects
+        <FaHelmetSafety /> Recent Projects
       </div>
       <table className="table table-bordered table-striped">
         <tbody>
-          {projects.map((project) => {
+          {projects.map((project, i) => {
             return (
-              <tr>
+              <tr key={i}>
                 <td>
                   <a href={project.link} target="_blank">
                     {project.name}
                   </a>
                 </td>
                 <td>
-                  {project.description.split(/[\s]/).map((word) => {
+                  {project.description.split(/[\s]/).map((word, j) => {
                     if (
                       buzzwords.has(word.toLowerCase()) ||
                       buzzwords.has(word.slice(0, -1).toLowerCase())
                     ) {
-                      return <ins>{word} </ins>;
+                      return <ins key={`${i}${j}`}>{word} </ins>;
                     } else {
                       return word + " ";
                     }

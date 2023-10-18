@@ -1,3 +1,12 @@
+import {
+  FaEnvelope,
+  FaGithub,
+  FaHouse,
+  FaLinkedin,
+  FaPhone,
+  FaStackOverflow,
+} from "react-icons/fa6";
+
 import Image from "next/image";
 
 function Intro() {
@@ -9,18 +18,19 @@ function Intro() {
       </h4>
       <table className="table table-bordered mt-1">
         <tbody>
-          {/* <tr>
-                        <td colSpan={2}><i className="fas fa-phone fa-lg" /> +201146613779</td>
-                    </tr> */}
           <tr>
             <td colSpan={2}>
-              <i className="fas fa-home fa-lg" /> Giza, Sheikh Zayed City
+              <FaPhone /> +201146613779
             </td>
           </tr>
           <tr>
             <td colSpan={2}>
-              <i className="fas fa-envelope fa-lg" /> ms10596 [at] gmail [dot]
-              com
+              <FaHouse /> Giza, Sheikh Zayed City
+            </td>
+          </tr>
+          <tr>
+            <td colSpan={2}>
+              <FaEnvelope /> ms10596 [at] gmail [dot] com
             </td>
           </tr>
         </tbody>
@@ -32,6 +42,7 @@ function Intro() {
         alt="me"
         width={450}
         height={333}
+        priority={false}
       />
 
       <div className="mt-1" />
@@ -43,7 +54,7 @@ function Intro() {
           target="_blank"
           style={{ width: "33%" }}
         >
-          <i className="fab fa-github fa-lg" />
+          <FaGithub />
         </a>
         <a
           className="btn btn-outline-dark"
@@ -51,7 +62,7 @@ function Intro() {
           target="_blank"
           style={{ width: "33%" }}
         >
-          <i className="fab fa-linkedin fa-lg" />
+          <FaLinkedin />
         </a>
         <a
           className="btn btn-outline-dark"
@@ -59,7 +70,7 @@ function Intro() {
           target="_blank"
           style={{ width: "33%" }}
         >
-          <i className="fab fa-stack-overflow" />
+          <FaStackOverflow />
         </a>
       </div>
       <div className="mt-1" />

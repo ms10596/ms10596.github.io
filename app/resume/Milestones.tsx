@@ -47,34 +47,32 @@ function Milestones() {
         <FaFlag /> Milestones
       </div>
       <table className="table table-bordered">
-        <tbody>
-          {milestones.map((milestone, i) => {
-            return (
-              <tr key={i}>
-                <td className="text-center">
-                  <a href={milestone.link} target="_blank">
-                    <Image
-                      height={70}
-                      width={70}
-                      src={milestone.logo_link}
-                      alt={`${milestone.company} logo`}
-                    />
-                  </a>
-                </td>
-                <td>
-                  {milestone.start_date} <FaArrowRight  />{" "}
-                  {milestone.end_date} . {milestone.duration}
-                  <br />
-                  <strong>{milestone.company}</strong>
-                  <br />
-                  {milestone.role}
-                  <br />
-                  <em>{milestone.note}</em>
-                </td>
-              </tr>
-            );
-          })}
-        </tbody>
+        {milestones.map((milestone, i) => {
+          return (
+            <tr key={i}>
+              <td className="text-center" style={{ width: "15px" }}>
+                <a href={milestone.link} target="_blank">
+                  <Image
+                    height={70}
+                    width={70}
+                    src={milestone.logo_link}
+                    alt={`${milestone.company} logo`}
+                  />
+                </a>
+              </td>
+              <td>
+                {milestone.start_date} <FaArrowRight size={30} /> {milestone.end_date} .{" "}
+                {milestone.duration}
+                <br />
+                <strong>{milestone.company}</strong>
+                <br />
+                {milestone.role}
+                <br />
+                <em>{milestone.note}</em>
+              </td>
+            </tr>
+          );
+        })}
       </table>
     </div>
   );

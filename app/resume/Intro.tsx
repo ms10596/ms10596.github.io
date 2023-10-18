@@ -16,22 +16,25 @@ function Intro() {
       <h4 className="font-italic font-weight-light text-center mt-2">
         Computer Scientist
       </h4>
-      <table className="table table-bordered mt-1">
+      <table className="table mt-1">
         <tbody>
           <tr>
-            <td colSpan={2}>
-              <FaPhone /> +201146613779
+            <td>
+              <FaPhone />
             </td>
+            <td>+201146613779</td>
           </tr>
           <tr>
-            <td colSpan={2}>
-              <FaHouse /> Giza, Sheikh Zayed City
+            <td>
+              <FaHouse />
             </td>
+            <td>Giza, Sheikh Zayed City</td>
           </tr>
           <tr>
-            <td colSpan={2}>
-              <FaEnvelope /> ms10596 [at] gmail [dot] com
+            <td>
+              <FaEnvelope />
             </td>
+            <td>ms10596 [at] gmail [dot] com</td>
           </tr>
         </tbody>
       </table>

@@ -1,4 +1,5 @@
 import { FaCertificate } from "react-icons/fa6";
+import Image from "next/image";
 const Certificates = () => {
   const certificates = [
     {
@@ -39,14 +40,16 @@ const Certificates = () => {
       </div>
       <table className="table table-bordered">
         <tbody>
-          {certificates.map((certificate,i) => {
+          {certificates.map((certificate, i) => {
             return (
               <tr key={i}>
                 <td className="text-center">
-                  <img
+                  <Image
                     src={certificate.logo}
-                    width="25"
+                    width={25}
+                    height={25}
                     title={certificate.issuer}
+                    alt={certificate.issuer}
                   />
                 </td>
                 <td>

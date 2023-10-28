@@ -1,4 +1,7 @@
 import "./globals.css";
+import "@radix-ui/themes/styles.css";
+
+import { Theme, ThemePanel } from "@radix-ui/themes";
 
 import Footer from "./resume/Footer";
 import { Inter } from "next/font/google";
@@ -18,9 +21,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-dark`}>
-        {children}
-        <Footer />
+      <body className={inter.className}>
+        <Theme
+          panelBackground="solid"
+          className="bg-gradient-to-r  from-sky-950 to-emerald-900"
+        >
+          {children}
+          <Footer />
+        </Theme>
       </body>
     </html>
   );

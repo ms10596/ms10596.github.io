@@ -1,3 +1,4 @@
+import { Card, Heading, SelectGroup, Table } from "@radix-ui/themes";
 import {
   FaEnvelope,
   FaGithub,
@@ -11,34 +12,32 @@ import Image from "next/image";
 
 function Intro() {
   return (
-    <div className="card mt-3">
-      <h1 className="card-title card-header text-dark">Mohamed Sayed</h1>
-      <h4 className="font-italic font-weight-light text-center mt-2">
-        Full Stack Web Developer
-      </h4>
-      <table className="table mt-1">
-        <tbody>
-          <tr>
-            <td>
+    <Card>
+      <Heading as="h1">Mohamed Sayed</Heading>
+      <Heading as="h2">Full Stack Web Developer</Heading>
+      <Table.Root>
+        <Table.Body>
+          <Table.Row>
+            <Table.Cell>
               <FaPhone />
-            </td>
-            <td>+201146613779</td>
-          </tr>
-          <tr>
-            <td>
+            </Table.Cell>
+            <Table.Cell>+201146613779</Table.Cell>
+          </Table.Row>
+          <Table.Row>
+            <Table.Cell>
               <FaHouse />
-            </td>
-            <td>Giza, Sheikh Zayed City</td>
-          </tr>
-          <tr>
-            <td>
+            </Table.Cell>
+            <Table.Cell>Giza, Sheikh Zayed City</Table.Cell>
+          </Table.Row>
+          <Table.Row>
+            <Table.Cell>
               <FaEnvelope />
-            </td>
-            <td>ms10596 [at] gmail [dot] com</td>
-          </tr>
-        </tbody>
-      </table>
-      <div></div>
+            </Table.Cell>
+            <Table.Cell>ms10596 [at] gmail [dot] com</Table.Cell>
+          </Table.Row>
+        </Table.Body>
+      </Table.Root>
+
       <Image
         className="card-img-bottom"
         src="/me.jpg"
@@ -47,8 +46,6 @@ function Intro() {
         height={333}
         priority={false}
       />
-
-      <div className="mt-1" />
 
       <div className="btn-group btn-group-lg">
         <a
@@ -77,7 +74,7 @@ function Intro() {
         </a>
       </div>
       <div className="mt-1" />
-    </div>
+    </Card>
   );
 }
 export default Intro;

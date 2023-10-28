@@ -1,4 +1,7 @@
+import { Card, Heading, Table } from "@radix-ui/themes";
+
 import { FaToolbox } from "react-icons/fa6";
+import { Fragment } from "react";
 
 function Tools() {
   const state = {
@@ -14,29 +17,31 @@ function Tools() {
     Others: ["Git", "React", "Bootstrap"],
   };
   return (
-    <div className="card mt-3">
-      <div className="card-title card-header">
+    <Card>
+      <Heading>
         <FaToolbox /> Tools
-      </div>
-      <table className="table table-bordered table-striped">
-        {Object.entries(state).map(([key, value], i) => {
-          return (
-            <tbody key={i}>
-              <tr>
-                <td rowSpan={value.length + 1}>{key}</td>
-              </tr>
-              {value.map((skill, j) => {
-                return (
-                  <tr key={`${i}${j}`}>
-                    <td>{skill}</td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          );
-        })}
-      </table>
-    </div>
+      </Heading>
+      <Table.Root>
+        <Table.Body>
+          {Object.entries(state).map(([key, value], i) => {
+            return (
+              <Fragment key={i}>
+                <Table.Row>
+                  <Table.Cell rowSpan={value.length + 1}>{key}</Table.Cell>
+                </Table.Row>
+                {value.map((skill, j) => {
+                  return (
+                    <Table.Row key={`${i}${j}`}>
+                      <Table.Cell>{skill}</Table.Cell>
+                    </Table.Row>
+                  );
+                })}
+              </Fragment>
+            );
+          })}
+        </Table.Body>
+      </Table.Root>
+    </Card>
   );
 }
 

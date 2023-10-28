@@ -1,5 +1,8 @@
+import { Card, Heading, Table } from "@radix-ui/themes";
+
 import { FaCertificate } from "react-icons/fa6";
 import Image from "next/image";
+
 const Certificates = () => {
   const certificates = [
     {
@@ -34,16 +37,16 @@ const Certificates = () => {
     },
   ];
   return (
-    <div className="card mt-3">
-      <div className="card-title card-header">
+    <Card>
+      <Heading size="3">
         <FaCertificate /> Certificates
-      </div>
-      <table className="table table-bordered">
-        <tbody>
+      </Heading>
+      <Table.Root>
+        <Table.Body>
           {certificates.map((certificate, i) => {
             return (
-              <tr key={i}>
-                <td className="text-center">
+              <Table.Row key={i}>
+                <Table.Cell className="text-center">
                   <Image
                     src={certificate.logo}
                     width={25}
@@ -51,18 +54,18 @@ const Certificates = () => {
                     title={certificate.issuer}
                     alt={certificate.issuer}
                   />
-                </td>
-                <td>
+                </Table.Cell>
+                <Table.Cell>
                   <a href={certificate.link} target="_blank">
                     {certificate.name}
                   </a>
-                </td>
-              </tr>
+                </Table.Cell>
+              </Table.Row>
             );
           })}
-        </tbody>
-      </table>
-    </div>
+        </Table.Body>
+      </Table.Root>
+    </Card>
   );
 };
 

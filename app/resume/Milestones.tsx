@@ -1,3 +1,4 @@
+import { Card, Heading, Table } from "@radix-ui/themes";
 import { FaArrowRight, FaFlag } from "react-icons/fa6";
 
 import Image from "next/image";
@@ -42,39 +43,41 @@ function Milestones() {
     },
   ];
   return (
-    <div className="card mt-3">
-      <div className="card-title card-header">
+    <Card>
+      <Heading>
         <FaFlag /> Milestones
-      </div>
-      <table className="table table-bordered">
-        {milestones.map((milestone, i) => {
-          return (
-            <tr key={i}>
-              <td className="text-center" style={{ width: "15px" }}>
-                <a href={milestone.link} target="_blank">
-                  <Image
-                    height={70}
-                    width={70}
-                    src={milestone.logo_link}
-                    alt={`${milestone.company} logo`}
-                  />
-                </a>
-              </td>
-              <td>
-                {milestone.start_date} <FaArrowRight size={30} /> {milestone.end_date} .{" "}
-                {milestone.duration}
-                <br />
-                <strong>{milestone.company}</strong>
-                <br />
-                {milestone.role}
-                <br />
-                <em>{milestone.note}</em>
-              </td>
-            </tr>
-          );
-        })}
-      </table>
-    </div>
+      </Heading>
+      <Table.Root>
+        <Table.Body>
+          {milestones.map((milestone, i) => {
+            return (
+              <Table.Row key={i}>
+                <Table.Cell className="text-center" style={{ width: "15px" }}>
+                  <a href={milestone.link} target="_blank">
+                    <Image
+                      height={70}
+                      width={70}
+                      src={milestone.logo_link}
+                      alt={`${milestone.company} logo`}
+                    />
+                  </a>
+                </Table.Cell>
+                <Table.Cell>
+                  {milestone.start_date} <FaArrowRight size={30} />{" "}
+                  {milestone.end_date} . {milestone.duration}
+                  <br />
+                  <strong>{milestone.company}</strong>
+                  <br />
+                  {milestone.role}
+                  <br />
+                  <em>{milestone.note}</em>
+                </Table.Cell>
+              </Table.Row>
+            );
+          })}
+        </Table.Body>
+      </Table.Root>
+    </Card>
   );
 }
 export default Milestones;

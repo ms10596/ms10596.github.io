@@ -1,3 +1,5 @@
+import { Card, Heading, Table } from "@radix-ui/themes";
+
 import { FaHelmetSafety } from "react-icons/fa6";
 
 function Projects() {
@@ -60,21 +62,21 @@ function Projects() {
     "bootstrap",
   ]);
   return (
-    <div className="card mt-3">
-      <div className="card-title card-header">
+    <Card>
+      <Heading>
         <FaHelmetSafety /> Recent Projects
-      </div>
-      <table className="table table-bordered table-striped">
-        <tbody>
+      </Heading>
+      <Table.Root>
+        <Table.Body>
           {projects.map((project, i) => {
             return (
-              <tr key={i}>
-                <td>
+              <Table.Row key={i}>
+                <Table.Cell>
                   <a href={project.link} target="_blank">
                     {project.name}
                   </a>
-                </td>
-                <td>
+                </Table.Cell>
+                <Table.Cell>
                   {project.description.split(/[\s]/).map((word, j) => {
                     if (
                       buzzwords.has(word.toLowerCase()) ||
@@ -85,13 +87,13 @@ function Projects() {
                       return word + " ";
                     }
                   })}
-                </td>
-              </tr>
+                </Table.Cell>
+              </Table.Row>
             );
           })}
-        </tbody>
-      </table>
-    </div>
+        </Table.Body>
+      </Table.Root>
+    </Card>
   );
 }
 

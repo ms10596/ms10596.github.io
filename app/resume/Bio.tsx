@@ -1,5 +1,7 @@
+import { Card } from "@radix-ui/themes";
+
 const Bio = () => (
-  <div className="card mt-3">
+  <Card>
     <div className="card-body">
       <p className="card-text">
         Full-Stack Web Developer with a Passion for Type Safety Former data
@@ -9,7 +11,7 @@ const Bio = () => (
         safety is crucial for delivering high-quality, bug-free code.
       </p>
     </div>
-  </div>
+  </Card>
 );
 
 export default Bio;

@@ -14,7 +14,7 @@ function Intro() {
     <div className="card mt-3">
       <h1 className="card-title card-header text-dark">Mohamed Sayed</h1>
       <h4 className="font-italic font-weight-light text-center mt-2">
-        Computer Scientist
+        Full Stack Web Developer
       </h4>
       <table className="table mt-1">
         <tbody>

@@ -5,8 +5,8 @@ const Certificates = () => {
     {
       name: "Mathematics for Machine Learning Specialization",
       link: "https://www.coursera.org/account/accomplishments/specialization/certificate/P22MNQQMTABD",
-      logo: "/coursera.png",
-      issuer: "Udacity",
+      logo: "coursera.png",
+      issuer: "Coursera",
     },
     {
       name: "Cloud Developer for Enterprise Nanodegree",

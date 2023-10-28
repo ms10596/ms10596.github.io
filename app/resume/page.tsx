@@ -11,21 +11,17 @@ import Tools from "./Tools";
 
 export default function Page() {
   return (
-    <div className="bg-dark container">
-      <div>
-        <div className="row">
-          <div className="col-5">
-            <Intro />
-            <Tools />
-            <Podcast />
-          </div>
-          <div className="col-7">
-            <Bio />
-            <Milestones />
-            <Projects />
-            <Certificates />
-          </div>
-        </div>
+    <div className="bg-dark md:flex p-5 gap-x-9">
+      <div className="w-full md:w-1/4">
+        <Intro />
+        <Tools />
+        <Podcast />
+      </div>
+      <div className="w-full md:w-3/4">
+        <Bio />
+        <Milestones />
+        <Projects />
+        <Certificates />
       </div>
     </div>
   );

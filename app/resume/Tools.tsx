@@ -1,46 +1,43 @@
-import { Card, Heading, Table } from "@radix-ui/themes";
+import { Badge, Card, Heading, Strong, Table } from "@radix-ui/themes";
 
 import { FaToolbox } from "react-icons/fa6";
-import { Fragment } from "react";
 
 function Tools() {
   const state = {
-    Data: ["Numpy", "Pandas", "Matplotlib", "NLTK", "Keras", "Scikit-learn"],
     Backend: [
-      "Flask",
-      "Docker",
-      "Kubernetes",
-      "Linux",
+      "Rest APIS",
+      "Typescript",
+      "NestJS",
+      "Prisma",
       "PostgreSQL",
-      "Elastic Search",
+      "GraphQL",
+      "AWS",
     ],
-    Others: ["Git", "React", "Bootstrap"],
+    Frontend: ["Typescript", "React", "React-Query", "TailwindCSS", "Electron", "Antd", "MUI"],
   };
   return (
     <Card>
       <Heading>
         <FaToolbox /> Tools
       </Heading>
-      <Table.Root>
-        <Table.Body>
-          {Object.entries(state).map(([key, value], i) => {
-            return (
-              <Fragment key={i}>
-                <Table.Row>
-                  <Table.Cell rowSpan={value.length + 1}>{key}</Table.Cell>
-                </Table.Row>
+      <div className="flex flex-col gap-y-2">
+        {Object.entries(state).map(([key, value], i) => {
+          return (
+            <div key={key}>
+              <Strong>{key}</Strong>
+              <div className="flex gap-x-4 gap-y-2 flex-wrap">
                 {value.map((skill, j) => {
                   return (
-                    <Table.Row key={`${i}${j}`}>
-                      <Table.Cell>{skill}</Table.Cell>
-                    </Table.Row>
+                    <Badge size={"2"} key={j}>
+                      {skill}
+                    </Badge>
                   );
                 })}
-              </Fragment>
-            );
-          })}
-        </Table.Body>
-      </Table.Root>
+              </div>
+            </div>
+          );
+        })}
+      </div>
     </Card>
   );
 }

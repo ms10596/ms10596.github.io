@@ -1,4 +1,4 @@
-import { Card, Heading, SelectGroup, Table } from "@radix-ui/themes";
+import { Card, Heading, Link, Separator, Table } from "@radix-ui/themes";
 import {
   FaEnvelope,
   FaGithub,
@@ -13,8 +13,16 @@ import Image from "next/image";
 function Intro() {
   return (
     <Card>
-      <Heading as="h1">Mohamed Sayed</Heading>
-      <Heading as="h2">Full Stack Web Developer</Heading>
+      <div className="pb-5">
+        <Link size={"8"} href="https://ms10596.github.io">
+          Mohamed Sayed
+        </Link>
+        <Heading as="h3" size={"7"} weight={"regular"}>
+          Full Stack Web Developer
+        </Heading>
+      </div>
+
+      <Separator size="4" />
       <Table.Root>
         <Table.Body>
           <Table.Row>
@@ -35,45 +43,42 @@ function Intro() {
             </Table.Cell>
             <Table.Cell>ms10596 [at] gmail [dot] com</Table.Cell>
           </Table.Row>
+          <Table.Row>
+            <Table.Cell>
+              <FaGithub />
+            </Table.Cell>
+            <Table.Cell>
+              <Link target="_blank" href="https://www.github.com/ms10596">
+                https://www.github.com/ms10596
+              </Link>
+            </Table.Cell>
+          </Table.Row>
+          <Table.Row>
+            <Table.Cell>
+              <FaStackOverflow />
+            </Table.Cell>
+            <Table.Cell>
+              <Link
+                target="_blank"
+                href="https://stackoverflow.com/users/7954107/mohamed-sayed"
+              >
+                https://stackoverflow.com/users/7954107/mohamed-sayed
+              </Link>
+            </Table.Cell>
+          </Table.Row>
+          <Table.Row>
+            <Table.Cell>
+              <FaLinkedin />
+            </Table.Cell>
+            <Table.Cell>
+              <Link target="_blank" href="https://www.linkedin.com/in/ms10596">
+                https://www.linkedin.com/in/ms10596
+              </Link>
+            </Table.Cell>
+          </Table.Row>
         </Table.Body>
       </Table.Root>
-
-      <Image
-        className="card-img-bottom"
-        src="/me.jpg"
-        alt="me"
-        width={450}
-        height={333}
-        priority={false}
-      />
-
-      <div className="btn-group btn-group-lg">
-        <a
-          className="btn btn-outline-dark"
-          href="https://www.github.com/ms10596"
-          target="_blank"
-          style={{ width: "33%" }}
-        >
-          <FaGithub />
-        </a>
-        <a
-          className="btn btn-outline-dark"
-          href="https://www.linkedin.com/in/ms10596"
-          target="_blank"
-          style={{ width: "33%" }}
-        >
-          <FaLinkedin />
-        </a>
-        <a
-          className="btn btn-outline-dark"
-          href="https://stackoverflow.com/users/7954107/mohamed-sayed"
-          target="_blank"
-          style={{ width: "33%" }}
-        >
-          <FaStackOverflow />
-        </a>
-      </div>
-      <div className="mt-1" />
+      <Image src="/me.jpg" alt="me" width={450} height={333} priority={false} />
     </Card>
   );
 }

@@ -27,7 +27,7 @@ function Intro() {
             <Table.Cell>
               <FaHouse />
             </Table.Cell>
-            <Table.Cell>Giza, Sheikh Zayed City</Table.Cell>
+            <Table.Cell>Egypt, Giza, Sheikh Zayed City</Table.Cell>
           </Table.Row>
           <Table.Row>
             <Table.Cell>

@@ -1,45 +1,86 @@
-import { Card, Heading, Table } from "@radix-ui/themes";
-import { FaArrowRight, FaFlag } from "react-icons/fa6";
+"use client";
 
-import Image from "next/image";
+import { Card, Heading } from "@radix-ui/themes";
+
+import { Chrono } from "react-chrono";
+import { FaFlag } from "react-icons/fa6";
 
 function Milestones() {
   const milestones = [
     {
-      company: "Optomatica",
-      role: "Data Scientist",
-      start_date: "2020-04",
-      end_date: "present",
-      logo_link: "/opto.png",
+      cardTitle: "Optomatica",
+      title: "2020-04 - present",
       link: "https://optomatica.com/",
+      media: {
+        type: "IMAGE",
+        source: {
+          url: "/optomatica.png",
+        },
+      },
+      items: [
+        {
+          cardTitle: "2020-08 - present",
+          cardSubtitle: "Full Stack Web Developer",
+          cardDetailedText: "",
+        },
+        {
+          cardTitle: "2020-04 - 2020-07",
+          cardSubtitle: "Data Scientist",
+          cardDetailedText: "",
+        },
+      ],
     },
     {
-      company: "Agolo",
-      role: "Natural Language Processing Engineering Internship",
-      start_date: "2019-07",
-      end_date: "2019-10",
-      logo_link: "/agolo.ico",
-      link: "https://www.agolo.com",
-      duration: "3 mos",
-    },
-    {
-      company: "Udacity",
-      role: "Session Lead",
-      start_date: "2019-06",
-      end_date: "2019-10",
-      logo_link: "/udacity.svg",
+      cardTitle: "Udacity",
+      cardSubtitle: "Session Lead",
+      title: "2019-06 - 2021-04",
+      logoLink: "/udacity.svg",
       link: "https://udacity.com",
-      duration: "4 mos",
+      media: {
+        type: "IMAGE",
+        source: {
+          url: "/udacity.svg",
+        },
+      },
+      items: [
+        {
+          cardTitle: "2020-08 - 2021-04",
+          cardSubtitle: "Web development with Python",
+          cardDetailedText: "",
+        },
+        {
+          cardTitle: "2019-06 - 2019-10",
+          cardSubtitle: "Intro to programming",
+          cardDetailedText: "",
+        },
+      ],
     },
     {
-      company: "Cairo University",
-      role: "Bachelor's degree, Computer Science",
-      start_date: "2015-09",
-      end_date: "2019-06",
-      note: "Faculty of Computers and Artificial Intelligence",
-      logo_link: "/fci.ico",
+      cardTitle: "Agolo",
+      cardSubtitle: "Natural Language Processing Engineering Internship",
+      title: "2019-07 - 2019-10",
+      logoLink: "/agolo.ico",
+      link: "https://www.agolo.com",
+      media: {
+        type: "IMAGE",
+        source: {
+          url: "/agolo.ico",
+        },
+      },
+    },
+    {
+      cardTitle: "Cairo University",
+      cardSubtitle: "Bachelor's degree, Computer Science",
+      title: "2015-09 - 2019-06",
+      logoLink: "/fci.jpg",
       link: "https://fci.cu.edu.eg/Home",
-      duration: "4 yrs",
+      media: {
+        type: "IMAGE",
+        source: {
+          url: "/fci.jpg",
+        },
+      },
+      cardDetailedText: "Faculty of Computers and Artificial Intelligence",
     },
   ];
   return (
@@ -47,36 +88,9 @@ function Milestones() {
       <Heading>
         <FaFlag /> Milestones
       </Heading>
-      <Table.Root>
-        <Table.Body>
-          {milestones.map((milestone, i) => {
-            return (
-              <Table.Row key={i}>
-                <Table.Cell className="text-center" style={{ width: "15px" }}>
-                  <a href={milestone.link} target="_blank">
-                    <Image
-                      height={70}
-                      width={70}
-                      src={milestone.logo_link}
-                      alt={`${milestone.company} logo`}
-                    />
-                  </a>
-                </Table.Cell>
-                <Table.Cell>
-                  {milestone.start_date} <FaArrowRight size={30} />{" "}
-                  {milestone.end_date} . {milestone.duration}
-                  <br />
-                  <strong>{milestone.company}</strong>
-                  <br />
-                  {milestone.role}
-                  <br />
-                  <em>{milestone.note}</em>
-                </Table.Cell>
-              </Table.Row>
-            );
-          })}
-        </Table.Body>
-      </Table.Root>
+      <div>
+        <Chrono items={milestones} mode="VERTICAL_ALTERNATING" hideControls />
+      </div>
     </Card>
   );
 }

@@ -1,7 +1,7 @@
 function Footer() {
   return (
     <div>
-      <footer className="page-footer font-small bg-info">
+      <footer className="page-footer font-small bg-transparent">
         <div className="text-center">2019 Copyright: Designed by @ms10596</div>
       </footer>
     </div>

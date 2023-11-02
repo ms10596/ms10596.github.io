@@ -78,7 +78,15 @@ function Intro() {
           </Table.Row>
         </Table.Body>
       </Table.Root>
-      <Image src="/me.jpg" alt="me" width={450} height={333} priority={false} />
+      <div className="flex w-full justify-center items-center">
+        <Image
+          src="/me.jpg"
+          alt="me"
+          width={450}
+          height={333}
+          priority={false}
+        />
+      </div>
     </Card>
   );
 }

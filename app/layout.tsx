@@ -17,15 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="m-0">
-        <Theme
-          panelBackground="solid"
-          className={`bg-gradient-to-r  from-sky-950 to-emerald-900`}
-        >
-          {children}
-          <Footer />
-        </Theme>
-      </body>
+      <body className="m-0">{children}</body>
     </html>
   );
 }

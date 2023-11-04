@@ -12,7 +12,7 @@ import Image from "next/image";
 
 function Intro() {
   return (
-    <Card>
+    <Card className="!sticky top-0">
       <div className="pb-5">
         <Link size={"8"} href="https://ms10596.github.io">
           Mohamed Sayed
@@ -25,12 +25,6 @@ function Intro() {
       <Separator size="4" />
       <Table.Root>
         <Table.Body>
-          <Table.Row>
-            <Table.Cell>
-              <FaPhone />
-            </Table.Cell>
-            <Table.Cell>+201146613779</Table.Cell>
-          </Table.Row>
           <Table.Row>
             <Table.Cell>
               <FaHouse />

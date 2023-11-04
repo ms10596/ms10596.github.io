@@ -1,4 +1,4 @@
-import { Badge, Card, Heading, Strong, Table } from "@radix-ui/themes";
+import { Badge, Card, Heading, Strong } from "@radix-ui/themes";
 
 import { FaToolbox } from "react-icons/fa6";
 
@@ -16,12 +16,12 @@ function Tools() {
     Frontend: ["Typescript", "React", "React-Query", "TailwindCSS", "Electron", "Antd", "MUI"],
   };
   return (
-    <Card>
+    <Card className="!sticky top-[690px]">
       <Heading>
         <FaToolbox /> Tools
       </Heading>
       <div className="flex flex-col gap-y-2">
-        {Object.entries(state).map(([key, value], i) => {
+        {Object.entries(state).map(([key, value]) => {
           return (
             <div key={key}>
               <Strong>{key}</Strong>

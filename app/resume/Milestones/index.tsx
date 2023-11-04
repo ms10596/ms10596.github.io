@@ -6,6 +6,7 @@ import { Chrono, TimelineItem } from "react-chrono";
 import { FaFlag } from "react-icons/fa6";
 import OptomaticaFirst from "./optomatica-first.mdx";
 import OptomaticaSecond from "./optomatica-second.mdx";
+import { TimelineProps } from "react-chrono/dist/models/TimelineModel";
 import UdacitySecond from "./udacity-second.mdx";
 
 function Milestones() {
@@ -13,6 +14,7 @@ function Milestones() {
     {
       cardTitle: "Optomatica",
       title: "2020-04 - present",
+      url: "https://optomatica.com",
       media: {
         type: "IMAGE",
         source: {
@@ -34,6 +36,7 @@ function Milestones() {
     },
     {
       cardTitle: "Udacity",
+      url: "https://udacity.com",
       cardSubtitle: "Session Lead",
       title: "2019-06 - 2021-04",
       media: {
@@ -59,6 +62,7 @@ function Milestones() {
     },
     {
       cardTitle: "Agolo",
+      url: "https://agolo.com",
       cardSubtitle: "Natural Language Processing Engineering Internship",
       title: "2019-07 - 2019-10",
       media: {
@@ -77,6 +81,7 @@ function Milestones() {
     },
     {
       cardTitle: "Cairo University",
+      url: "https://fcai.cu.edu.eg/",
       cardSubtitle: "Bachelor's degree, Computer Science",
       title: "2015-09 - 2019-06",
       media: {
@@ -95,14 +100,14 @@ function Milestones() {
       </Heading>
       <div>
         <Chrono
-          items={milestones}
-          mode="VERTICAL_ALTERNATING"
-          hideControls
-          mediaHeight={100}
-          useReadMore={false}
-        >
-          {[<OptomaticaFirst key={1} />]}
-        </Chrono>
+          {...({
+            items: milestones,
+            mode: "VERTICAL",
+            hideControls: true,
+            mediaHeight: 100,
+            useReadMore: false,
+          } as TimelineProps)}
+        />
       </div>
     </Card>
   );

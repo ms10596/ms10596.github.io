@@ -16,7 +16,7 @@ function Tools() {
     Frontend: ["Typescript", "React", "React-Query", "TailwindCSS", "Electron", "Antd", "MUI"],
   };
   return (
-    <Card className="!sticky top-[690px]">
+    <Card className="md:!sticky md:top-[690px]">
       <Heading>
         <FaToolbox /> Tools
       </Heading>

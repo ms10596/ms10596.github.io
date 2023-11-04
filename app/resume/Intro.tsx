@@ -12,7 +12,7 @@ import Image from "next/image";
 
 function Intro() {
   return (
-    <Card className="!sticky top-0">
+    <Card className="md:!sticky md:top-0">
       <div className="pb-5">
         <Link size={"8"} href="https://ms10596.github.io">
           Mohamed Sayed

@@ -1,0 +1,41 @@
+# Dynamic Back and Forward button in React Router
+
+React router is an amazing tool for routing in React. Using Browser Router can easily utilize the back and forward button of the browser. But what if you want to use the back and forward button in your electron app that uses a Memory router? Well, it is possible. In this article, we will see how to use the back and forward button in React Router.
+
+```
+import { useEffect, useState } from 'react';
+import { useLocation, useNavigate, useNavigationType } from 'react-router';
+
+export default () => {
+  const navigationType = useNavigationType();
+  const location = useLocation();
+  const navigate = useNavigate();
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [routesLength, setRoutesLength] = useState(0);
+
+  const goBack = () => {
+    setCurrentIndex(currentIndex - 1);
+    navigate(-1);
+  };
+
+  const goForward = () => {
+    setCurrentIndex(currentIndex + 1);
+    navigate(1);
+  };
+
+  useEffect(() => {
+    if (navigationType === 'PUSH') {
+      let newLength = routesLength + 1;
+      setRoutesLength(newLength);
+      setCurrentIndex(newLength);
+    }
+  }, [location, navigationType]);
+
+  return {
+    canBack: currentIndex > 0,
+    canForward: currentIndex < routesLength,
+    goForward,
+    goBack,
+  };
+};
+```

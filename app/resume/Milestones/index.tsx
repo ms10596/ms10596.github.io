@@ -3,96 +3,16 @@
 import { Card, Heading } from "@radix-ui/themes";
 import { Chrono, TimelineItem } from "react-chrono";
 
+import Agolo from "./agolo.mdx";
+import CairoUniversity from "./cairo-university.mdx";
 import { FaFlag } from "react-icons/fa6";
 import OptomaticaFirst from "./optomatica-first.mdx";
 import OptomaticaSecond from "./optomatica-second.mdx";
 import { TimelineProps } from "react-chrono/dist/models/TimelineModel";
+import UdacityFirst from "./udacity-first.mdx";
 import UdacitySecond from "./udacity-second.mdx";
 
 function Milestones() {
-  const milestones: TimelineItem[] = [
-    {
-      cardTitle: "Optomatica",
-      title: "2020-04 - present",
-      url: "https://optomatica.com",
-      media: {
-        type: "IMAGE",
-        source: {
-          url: "/optomatica.png",
-        },
-      },
-      items: [
-        {
-          cardTitle: "2020-08 - present",
-          cardSubtitle: "Full Stack Web Developer",
-          timelineContent: <OptomaticaSecond />,
-        },
-        {
-          cardTitle: "2020-04 - 2020-07",
-          cardSubtitle: "Data Scientist",
-          timelineContent: <OptomaticaFirst />,
-        },
-      ],
-    },
-    {
-      cardTitle: "Udacity",
-      url: "https://udacity.com",
-      cardSubtitle: "Session Lead",
-      title: "2019-06 - 2021-04",
-      media: {
-        type: "IMAGE",
-        source: {
-          url: "/udacity.svg",
-        },
-      },
-      items: [
-        {
-          cardTitle: "2020-08 - 2021-04",
-          cardSubtitle: "Web development with Python",
-          timelineContent: <UdacitySecond />,
-        },
-        {
-          cardTitle: "2019-06 - 2019-10",
-          cardSubtitle: "Intro to programming",
-          cardDetailedText: [
-            "Conducting weekly live zoom sessions to help high school students with the course content and projects. Topics were mainly basics of html, css and python",
-          ],
-        },
-      ],
-    },
-    {
-      cardTitle: "Agolo",
-      url: "https://agolo.com",
-      cardSubtitle: "Natural Language Processing Engineering Internship",
-      title: "2019-07 - 2019-10",
-      media: {
-        type: "IMAGE",
-        source: {
-          url: "/agolo.png",
-        },
-      },
-      cardDetailedText: [
-        "Worked on semantic similarity researches for clustering articles.",
-        "Deploying clustering services using kubernetes.",
-        "Integrating Flask apps with WSGI server for a better concurrency.",
-        "Extracting data from datawarehouses and Elasticsearch.",
-        "Worked on other problems like duplication detection.",
-      ],
-    },
-    {
-      cardTitle: "Cairo University",
-      url: "https://fcai.cu.edu.eg/",
-      cardSubtitle: "Bachelor's degree, Computer Science",
-      title: "2015-09 - 2019-06",
-      media: {
-        type: "IMAGE",
-        source: {
-          url: "/fci.jpg",
-        },
-      },
-      cardDetailedText: "Faculty of Computers and Artificial Intelligence",
-    },
-  ];
   return (
     <Card>
       <Heading>
@@ -103,13 +23,95 @@ function Milestones() {
           {...({
             items: milestones,
             mode: "VERTICAL",
+            flipLayout: true,
             hideControls: true,
-            mediaHeight: 100,
             useReadMore: false,
+            disableClickOnCircle: true,
+            disableTimelinePoint: true,
+            mediaSettings: {
+              imageFit: "contain",
+            },
+            mediaHeight: 100,
           } as TimelineProps)}
         />
       </div>
     </Card>
   );
 }
+const milestones: TimelineItem[] = [
+  {
+    cardTitle: "Optomatica",
+    title: "2020-04 - present",
+    url: "https://optomatica.com",
+    media: {
+      type: "IMAGE",
+      source: {
+        url: "/optomatica.png",
+      },
+    },
+    items: [
+      {
+        cardTitle: "2020-08 - present",
+        cardSubtitle: "Full Stack Web Developer",
+        timelineContent: <OptomaticaSecond />,
+      },
+      {
+        cardTitle: "2020-04 - 2020-07",
+        cardSubtitle: "Data Scientist",
+        timelineContent: <OptomaticaFirst />,
+      },
+    ],
+  },
+  {
+    cardTitle: "Udacity",
+    url: "https://udacity.com",
+    cardSubtitle: "Session Lead",
+    title: "2019-06 - 2021-04",
+    media: {
+      type: "IMAGE",
+      source: {
+        url: "/udacity.svg",
+      },
+    },
+    items: [
+      {
+        cardTitle: "2020-08 - 2021-04",
+        cardSubtitle: "Web development with Python",
+        timelineContent: <UdacitySecond />,
+      },
+      {
+        cardTitle: "2019-06 - 2019-10",
+        cardSubtitle: "Intro to programming",
+        timelineContent: <UdacityFirst />,
+      },
+    ],
+  },
+  {
+    cardTitle: "Agolo",
+    url: "https://agolo.com",
+    cardSubtitle: "Natural Language Processing Engineering Internship",
+    title: "2019-07 - 2019-10",
+    media: {
+      type: "IMAGE",
+      source: {
+        url: "/agolo.png",
+      },
+    },
+    timelineContent: <Agolo />,
+  },
+  {
+    cardTitle: "Cairo University",
+    url: "https://fcai.cu.edu.eg/",
+    cardSubtitle:
+      "Bachelor's degree, Computer Science at the Faculty of Computers and Artificial Intelligence",
+    title: "2015-09 - 2019-06",
+    media: {
+      type: "IMAGE",
+      source: {
+        url: "/fci.jpg",
+      },
+    },
+    timelineContent: <CairoUniversity />,
+  },
+];
 export default Milestones;

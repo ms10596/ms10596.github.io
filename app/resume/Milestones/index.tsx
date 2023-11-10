@@ -34,7 +34,9 @@ function Milestones() {
               imageFit: "contain",
             },
             mediaHeight: 100,
-            
+            theme: {
+              primary: "black",
+            },
           } as TimelineProps)}
         />
       </div>

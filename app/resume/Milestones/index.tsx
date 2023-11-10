@@ -36,6 +36,7 @@ function Milestones() {
             mediaHeight: 100,
             theme: {
               primary: "black",
+              secondary: "white",
             },
           } as TimelineProps)}
         />
@@ -56,12 +57,12 @@ const milestones: TimelineItem[] = [
     },
     items: [
       {
-        cardTitle: "2020-08 - present",
+        cardTitle: "2021-08 - present",
         cardSubtitle: "Full Stack Web Developer",
         timelineContent: <OptomaticaSecond />,
       },
       {
-        cardTitle: "2020-04 - 2020-07",
+        cardTitle: "2020-04 - 2021-07",
         cardSubtitle: "Data Scientist",
         timelineContent: <OptomaticaFirst />,
       },

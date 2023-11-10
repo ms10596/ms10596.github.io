@@ -1,10 +1,10 @@
 import "./globals.css";
 import "@radix-ui/themes/styles.css";
 
-import Footer from "./resume/Footer";
 import type { Metadata } from "next";
-import { Theme } from "@radix-ui/themes";
+import { Roboto_Mono } from "next/font/google";
 
+const robotoMono = Roboto_Mono({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Mohamed Sayed",
   description: "Personal website",
@@ -17,7 +17,25 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="m-0">{children}</body>
+      <link
+        rel="apple-touch-icon"
+        sizes="180x180"
+        href="/apple-touch-icon.png"
+      />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="32x32"
+        href="/favicon-32x32.png"
+      />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="16x16"
+        href="/favicon-16x16.png"
+      />
+      <link rel="manifest" href="/site.webmanifest" />
+      <body className={`m-0 ${robotoMono.className}`}>{children}</body>
     </html>
   );
 }

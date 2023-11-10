@@ -28,10 +28,13 @@ function Milestones() {
             useReadMore: false,
             disableClickOnCircle: true,
             disableTimelinePoint: true,
+            disableAutoScrollOnClick: true,
+            disableNavOnKey: true,
             mediaSettings: {
               imageFit: "contain",
             },
             mediaHeight: 100,
+            
           } as TimelineProps)}
         />
       </div>

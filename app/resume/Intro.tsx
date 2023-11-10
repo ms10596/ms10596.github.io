@@ -35,7 +35,7 @@ function Intro() {
             <Table.Cell>
               <FaEnvelope />
             </Table.Cell>
-            <Table.Cell>ms10596 [at] gmail [dot] com</Table.Cell>
+            <Table.Cell>ms10596@gmail.com</Table.Cell>
           </Table.Row>
           <Table.Row>
             <Table.Cell>

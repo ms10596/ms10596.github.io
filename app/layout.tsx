@@ -1,8 +1,10 @@
 import "./globals.css";
 import "@radix-ui/themes/styles.css";
 
+import Footer from "./Footer";
 import type { Metadata } from "next";
 import { Roboto_Mono } from "next/font/google";
+import { Theme } from "@radix-ui/themes";
 
 const robotoMono = Roboto_Mono({ subsets: ["latin"] });
 export const metadata: Metadata = {
@@ -35,7 +37,15 @@ export default function RootLayout({
         href="/favicon-16x16.png"
       />
       <link rel="manifest" href="/site.webmanifest" />
-      <body className={`m-0 ${robotoMono.className}`}>{children}</body>
+      <body className={`m-0 ${robotoMono.className}`}>
+        <Theme
+          panelBackground="solid"
+          className={`bg-gradient-to-r  from-sky-950 to-emerald-900`}
+        >
+          {children}
+          <Footer />
+        </Theme>
+      </body>
     </html>
   );
 }

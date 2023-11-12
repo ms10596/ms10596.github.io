@@ -4,18 +4,24 @@ import path from "path";
 
 export default function Page() {
   const routesPath = path.join(process.cwd(), "app", "blog");
-  const routesFiles = fs.readdirSync(routesPath);
+  const routesFiles = fs
+    .readdirSync(routesPath, { withFileTypes: true })
+    .filter((file) => file.isDirectory())
+    .map(({ name: slug }) => ({
+      slug,
+      meta: require(`./${slug}/page.mdx`).meta,
+    }));
 
   return (
-    <div>
+    <div className="py-80">
       <h1>blog</h1>
-      {routesFiles
-        .filter((file) => file !== "page.tsx")
-        .map((file) => (
-          <Link key={file} href={`blog/${file}`}>
-            {file}
+      <div>
+        {routesFiles.map(({ slug, meta }) => (
+          <Link key={slug} href={`blog/${slug}`}>
+            {meta.title}
           </Link>
         ))}
+      </div>
     </div>
   );
 }

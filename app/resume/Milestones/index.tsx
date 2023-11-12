@@ -38,6 +38,9 @@ function Milestones() {
               primary: "black",
               secondary: "white",
             },
+            classNames: {
+              cardText:'!items-start',
+            }
           } as TimelineProps)}
         />
       </div>

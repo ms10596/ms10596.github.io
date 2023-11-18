@@ -1,5 +1,4 @@
-import { Card, Em, Strong, Text } from "@radix-ui/themes";
-
+import { Card } from "@radix-ui/themes";
 import { MDXRemote } from "next-mdx-remote/rsc";
 
 const Bio = async () => {

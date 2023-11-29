@@ -13,7 +13,7 @@ function Tools() {
       "GraphQL",
       "AWS",
     ],
-    Frontend: ["Typescript", "React", "React-Query", "TailwindCSS", "Electron", "Antd", "MUI"],
+    Frontend: ["Typescript", "React", "Vite", "NextJS", "React-Query", "TailwindCSS", "Electron", "Antd", "MUI"],
   };
   return (
     <Card className="md:!sticky md:top-[690px]">

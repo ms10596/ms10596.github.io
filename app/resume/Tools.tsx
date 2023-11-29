@@ -1,19 +1,45 @@
 import { Badge, Card, Heading, Strong } from "@radix-ui/themes";
+import {
+  SiAmazonaws,
+  SiAntdesign,
+  SiElectron,
+  SiGraphql,
+  SiMui,
+  SiNestjs,
+  SiNextdotjs,
+  SiPostgresql,
+  SiPrisma,
+  SiReact,
+  SiReactquery,
+  SiTailwindcss,
+  SiTypescript,
+  SiVite,
+} from "react-icons/si";
 
 import { FaToolbox } from "react-icons/fa6";
 
 function Tools() {
   const state = {
     Backend: [
-      "Rest APIS",
-      "Typescript",
-      "NestJS",
-      "Prisma",
-      "PostgreSQL",
-      "GraphQL",
-      "AWS",
+      { name: "Rest APIS", icon: null },
+      { name: "Typescript", icon: <SiTypescript /> },
+      { name: "NestJS", icon: <SiNestjs /> },
+      { name: "Prisma", icon: <SiPrisma /> },
+      { name: "PostgreSQL", icon: <SiPostgresql /> },
+      { name: "GraphQL", icon: <SiGraphql /> },
+      { name: "AWS", icon: <SiAmazonaws /> },
     ],
-    Frontend: ["Typescript", "React", "Vite", "NextJS", "React-Query", "TailwindCSS", "Electron", "Antd", "MUI"],
+    Frontend: [
+      { name: "Typescript", icon: <SiTypescript /> },
+      { name: "React", icon: <SiReact /> },
+      { name: "Vite", icon: <SiVite /> },
+      { name: "NextJS", icon: <SiNextdotjs /> },
+      { name: "React-Query", icon: <SiReactquery /> },
+      { name: "TailwindCSS", icon: <SiTailwindcss/> },
+      { name: "Electron", icon: <SiElectron /> },
+      { name: "Antd", icon: <SiAntdesign /> },
+      { name: "MUI", icon: <SiMui /> },
+    ],
   };
   return (
     <Card className="md:!sticky md:top-[690px]">
@@ -29,7 +55,7 @@ function Tools() {
                 {value.map((skill, j) => {
                   return (
                     <Badge size={"2"} key={j}>
-                      {skill}
+                      {skill.name}{skill.icon}
                     </Badge>
                   );
                 })}

@@ -1,5 +1,3 @@
-"use client";
-
 import Agolo from "./agolo.mdx";
 import CairoUniversity from "./cairo-university.mdx";
 import OptomaticaFirst from "./optomatica-first.mdx";
@@ -35,7 +33,6 @@ export const milestones: TimelineItem[] = [
   {
     cardTitle: "Udacity",
     url: "https://udacity.com",
-    cardSubtitle: "Session Lead",
     title: "2019-06 - 2021-04",
     media: {
       type: "IMAGE",
@@ -46,12 +43,12 @@ export const milestones: TimelineItem[] = [
     items: [
       {
         cardTitle: "2020-08 - 2021-04",
-        cardSubtitle: "Web development with Python",
+        cardSubtitle: "Session Lead: Web development with Python",
         timelineContent: <UdacitySecond />,
       },
       {
         cardTitle: "2019-06 - 2019-10",
-        cardSubtitle: "Intro to programming",
+        cardSubtitle: "Session Lead: Intro to programming",
         timelineContent: <UdacityFirst />,
       },
     ],
@@ -59,7 +56,6 @@ export const milestones: TimelineItem[] = [
   {
     cardTitle: "Agolo",
     url: "https://agolo.com",
-    cardSubtitle: "Natural Language Processing Engineering Internship",
     title: "2019-07 - 2019-10",
     media: {
       type: "IMAGE",
@@ -67,19 +63,29 @@ export const milestones: TimelineItem[] = [
         url: "/agolo.png",
       },
     },
-    timelineContent: <Agolo />,
+    items: [
+      {
+        cardTitle: "2019-07 - 2019-10",
+        cardSubtitle: "Natural Language Processing Engineering Internship",
+        timelineContent: <Agolo />,
+      },
+    ],
   },
   {
     cardTitle: "Cairo University",
     url: "https://fcai.cu.edu.eg/",
-    cardSubtitle: "Bachelor's degree, Computer Science at the Faculty of Computers and Artificial Intelligence",
-    title: "2015-09 - 2019-06",
     media: {
       type: "IMAGE",
       source: {
         url: "/fci.jpg",
       },
     },
-    timelineContent: <CairoUniversity />,
+    items: [
+      {
+        cardTitle: "2015-09 - 2019-06",
+        cardSubtitle: "Bachelor's degree, Computer Science",
+        timelineContent: <CairoUniversity />,
+      },
+    ],
   },
 ];

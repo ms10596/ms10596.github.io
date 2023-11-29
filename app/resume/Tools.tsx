@@ -10,10 +10,12 @@ import {
   SiPostgresql,
   SiPrisma,
   SiReact,
+  SiReacthookform,
   SiReactquery,
   SiTailwindcss,
   SiTypescript,
   SiVite,
+  SiZod,
 } from "react-icons/si";
 
 import { FaToolbox } from "react-icons/fa6";
@@ -35,10 +37,12 @@ function Tools() {
       { name: "Vite", icon: <SiVite /> },
       { name: "NextJS", icon: <SiNextdotjs /> },
       { name: "React-Query", icon: <SiReactquery /> },
-      { name: "TailwindCSS", icon: <SiTailwindcss/> },
+      { name: "TailwindCSS", icon: <SiTailwindcss /> },
       { name: "Electron", icon: <SiElectron /> },
       { name: "Antd", icon: <SiAntdesign /> },
       { name: "MUI", icon: <SiMui /> },
+      { name: "React-Hook-Form", icon: <SiReacthookform /> },
+      { name: "Zod", icon: <SiZod />},
     ],
   };
   return (
@@ -55,7 +59,8 @@ function Tools() {
                 {value.map((skill, j) => {
                   return (
                     <Badge size={"2"} key={j}>
-                      {skill.name}{skill.icon}
+                      {skill.name}
+                      {skill.icon}
                     </Badge>
                   );
                 })}

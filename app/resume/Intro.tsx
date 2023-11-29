@@ -72,7 +72,7 @@ function Intro() {
           </Table.Row>
         </Table.Body>
       </Table.Root>
-      <div className="flex w-full justify-center items-center">
+      <div className="hidden md:flex w-full justify-center items-center">
         <Image
           src="/me.jpg"
           alt="me"

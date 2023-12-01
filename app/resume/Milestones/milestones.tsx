@@ -1,3 +1,5 @@
+"use client";
+
 import Agolo from "./agolo.mdx";
 import CairoUniversity from "./cairo-university.mdx";
 import OptomaticaFirst from "./optomatica-first.mdx";

@@ -4,15 +4,12 @@ import {
   FaGithub,
   FaHouse,
   FaLinkedin,
-  FaPhone,
   FaStackOverflow,
 } from "react-icons/fa6";
 
-import Image from "next/image";
-
 function Intro() {
   return (
-    <Card className="md:!sticky md:top-0">
+    <Card>
       <div className="pb-5">
         <Link size={"8"} href="https://ms10596.github.io">
           Mohamed Sayed
@@ -72,15 +69,6 @@ function Intro() {
           </Table.Row>
         </Table.Body>
       </Table.Root>
-      <div className="hidden md:flex w-full justify-center items-center">
-        <Image
-          src="/me.jpg"
-          alt="me"
-          width={450}
-          height={333}
-          priority={false}
-        />
-      </div>
     </Card>
   );
 }

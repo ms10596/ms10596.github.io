@@ -4,6 +4,7 @@ import {
   FaGithub,
   FaHouse,
   FaLinkedin,
+  FaPhone,
   FaStackOverflow,
 } from "react-icons/fa6";
 
@@ -33,6 +34,12 @@ function Intro() {
               <FaEnvelope />
             </Table.Cell>
             <Table.Cell>ms10596@gmail.com</Table.Cell>
+          </Table.Row>
+          <Table.Row>
+            <Table.Cell>
+              <FaPhone />
+            </Table.Cell>
+            <Table.Cell>+201146613779</Table.Cell>
           </Table.Row>
           <Table.Row>
             <Table.Cell>

@@ -1,5 +1,3 @@
-import { Card, Heading, Table } from "@radix-ui/themes";
-
 import { FaHelmetSafety } from "react-icons/fa6";
 
 function Projects() {
@@ -61,40 +59,41 @@ function Projects() {
     "react",
     "bootstrap",
   ]);
-  return (
-    <Card>
-      <Heading>
-        <FaHelmetSafety /> Recent Projects
-      </Heading>
-      <Table.Root>
-        <Table.Body>
-          {projects.map((project, i) => {
-            return (
-              <Table.Row key={i}>
-                <Table.Cell>
-                  <a href={project.link} target="_blank">
-                    {project.name}
-                  </a>
-                </Table.Cell>
-                <Table.Cell>
-                  {project.description.split(/[\s]/).map((word, j) => {
-                    if (
-                      buzzwords.has(word.toLowerCase()) ||
-                      buzzwords.has(word.slice(0, -1).toLowerCase())
-                    ) {
-                      return <ins key={`${i}${j}`}>{word} </ins>;
-                    } else {
-                      return word + " ";
-                    }
-                  })}
-                </Table.Cell>
-              </Table.Row>
-            );
-          })}
-        </Table.Body>
-      </Table.Root>
-    </Card>
-  );
+  return null;
+  // return (
+  //   <Card>
+  //     <Heading>
+  //       <FaHelmetSafety /> Recent Projects
+  //     </Heading>
+  //     <Table.Root>
+  //       <Table.Body>
+  //         {projects.map((project, i) => {
+  //           return (
+  //             <Table.Row key={i}>
+  //               <Table.Cell>
+  //                 <a href={project.link} target="_blank">
+  //                   {project.name}
+  //                 </a>
+  //               </Table.Cell>
+  //               <Table.Cell>
+  //                 {project.description.split(/[\s]/).map((word, j) => {
+  //                   if (
+  //                     buzzwords.has(word.toLowerCase()) ||
+  //                     buzzwords.has(word.slice(0, -1).toLowerCase())
+  //                   ) {
+  //                     return <ins key={`${i}${j}`}>{word} </ins>;
+  //                   } else {
+  //                     return word + " ";
+  //                   }
+  //                 })}
+  //               </Table.Cell>
+  //             </Table.Row>
+  //           );
+  //         })}
+  //       </Table.Body>
+  //     </Table.Root>
+  //   </Card>
+  // );
 }
 
 export default Projects;

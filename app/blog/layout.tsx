@@ -1,9 +1,13 @@
-import { Card } from "@radix-ui/themes";
+import { Header } from "../Header";
+import { ReactNode } from "react";
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+export default function Layout({ children }: { children: ReactNode }) {
   return (
-    <div className="px-96 py-24">
-      <Card>{children}</Card>
-    </div>
+    <>
+      <Header />
+      <div style={{ gridArea: "content" }} className="min-h-screen max-w-4xl">
+        {children}
+      </div>
+    </>
   );
 }

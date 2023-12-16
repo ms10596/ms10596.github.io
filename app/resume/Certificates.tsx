@@ -1,5 +1,3 @@
-import { Card, Heading, Table } from "@radix-ui/themes";
-
 import { FaCertificate } from "react-icons/fa6";
 import Image from "next/image";
 
@@ -36,37 +34,38 @@ const Certificates = () => {
       issuer: "Udacity",
     },
   ];
-  return (
-    <Card>
-      <Heading size="3">
-        <FaCertificate /> Certificates
-      </Heading>
-      <Table.Root>
-        <Table.Body>
-          {certificates.map((certificate, i) => {
-            return (
-              <Table.Row key={i}>
-                <Table.Cell className="text-center">
-                  <Image
-                    src={certificate.logo}
-                    width={25}
-                    height={25}
-                    title={certificate.issuer}
-                    alt={certificate.issuer}
-                  />
-                </Table.Cell>
-                <Table.Cell>
-                  <a href={certificate.link} target="_blank">
-                    {certificate.name}
-                  </a>
-                </Table.Cell>
-              </Table.Row>
-            );
-          })}
-        </Table.Body>
-      </Table.Root>
-    </Card>
-  );
+  return null
+  // return (
+  //   <Card>
+  //     <Heading size="3">
+  //       <FaCertificate /> Certificates
+  //     </Heading>
+  //     <Table.Root>
+  //       <Table.Body>
+  //         {certificates.map((certificate, i) => {
+  //           return (
+  //             <Table.Row key={i}>
+  //               <Table.Cell className="text-center">
+  //                 <Image
+  //                   src={certificate.logo}
+  //                   width={25}
+  //                   height={25}
+  //                   title={certificate.issuer}
+  //                   alt={certificate.issuer}
+  //                 />
+  //               </Table.Cell>
+  //               <Table.Cell>
+  //                 <a href={certificate.link} target="_blank">
+  //                   {certificate.name}
+  //                 </a>
+  //               </Table.Cell>
+  //             </Table.Row>
+  //           );
+  //         })}
+  //       </Table.Body>
+  //     </Table.Root>
+  //   </Card>
+  // );
 };
 
 export default Certificates;

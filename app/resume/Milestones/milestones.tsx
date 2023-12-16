@@ -76,6 +76,7 @@ export const milestones: TimelineItem[] = [
   {
     cardTitle: "Cairo University",
     url: "https://fcai.cu.edu.eg/",
+    title: "2015-09 - 2019-06",
     media: {
       type: "IMAGE",
       source: {

@@ -1,6 +1,7 @@
 import {
   SiAmazonaws,
   SiAntdesign,
+  SiDocker,
   SiElectron,
   SiGraphql,
   SiHeroku,
@@ -30,6 +31,7 @@ export const tools = {
     { name: "GraphQL", icon: <SiGraphql /> },
     { name: "AWS", icon: <SiAmazonaws /> },
     { name: "Heroku", icon: <SiHeroku /> },
+    { name: "Docker", icon: <SiDocker /> },
   ],
   Frontend: [
     { name: "Typescript", icon: <SiTypescript /> },

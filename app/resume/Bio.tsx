@@ -1,4 +1,3 @@
-import { Card } from "@radix-ui/themes";
 import { MDXRemote } from "next-mdx-remote/rsc";
 
 const Bio = async () => {
@@ -6,9 +5,11 @@ const Bio = async () => {
     "https://raw.githubusercontent.com/ms10596/ms10596/master/README.md"
   ).then((res) => res.text());
   return (
-    <Card>
-      <MDXRemote source={res} />
-    </Card>
+    <div className="card bg-primary-content">
+      <div className="card-body">
+        <MDXRemote source={res} />
+      </div>
+    </div>
   );
 };
 

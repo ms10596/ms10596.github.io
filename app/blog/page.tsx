@@ -13,15 +13,17 @@ export default function Page() {
     }));
 
   return (
-    <div className="py-80">
-      <h1>blog</h1>
-      <div>
+    <div className="pt-10">
+      <ul className="menu w-full rounded-box bg-base-200">
         {routesFiles.map(({ slug, meta }) => (
-          <Link key={slug} href={`blog/${slug}`}>
-            {meta.title}
-          </Link>
+          <li key={slug}>
+            <Link href={`blog/${slug}`} className="flex justify-between">
+              {meta.title}{" "}
+              <em style={{ textShadow: "0 0 2px #ffffff" }}>{meta.date}</em>
+            </Link>
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   );
 }

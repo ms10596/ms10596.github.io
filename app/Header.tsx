@@ -9,7 +9,7 @@ export function Header() {
     >
       <Link href={"/"} className="text-xl">Mohamed Sayed</Link>
       <div className="flex gap-x-9">
-        <Link href="resume" className="flex-none">
+        <Link href="/resume" className="flex-none">
           Hire me
         </Link>
         <ThemeSwitcher />

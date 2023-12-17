@@ -9,7 +9,7 @@ import {
 
 function Intro() {
   return (
-    <div className="card bg-primary-content">
+    <div className="card bg-base-100">
       <div className="card-body">
         <a href="https://ms10596.github.io" className="card-title">
           Mohamed Sayed

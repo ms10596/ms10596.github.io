@@ -11,7 +11,7 @@
 }
 
 .timeline-card-content {
-    @apply !bg-primary-content;
+    @apply !bg-base-100;
 }
 
 div:has(> .timeline-item-title) {

@@ -20,6 +20,10 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css"
+      />
+      <link
         rel="apple-touch-icon"
         sizes="180x180"
         href="/apple-touch-icon.png"

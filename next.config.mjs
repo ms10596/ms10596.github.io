@@ -1,7 +1,8 @@
 // const rehypeHighlight = import("rehype-highlight");
 // const remarkGfm = import("remark-gfm");
+import createMDX from "@next/mdx";
 
-const withMDX = require("@next/mdx")({
+const withMDX = createMDX({
   options: {
     remarkPlugins: [],
     rehypePlugins: [],
@@ -14,4 +15,4 @@ const nextConfig = {
   images: { unoptimized: true },
   pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
 };
-module.exports = withMDX(nextConfig);
+export default withMDX(nextConfig);

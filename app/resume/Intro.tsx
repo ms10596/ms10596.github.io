@@ -17,7 +17,7 @@ function Intro() {
         <h3>Full Stack Web Developer</h3>
 
         <div className="divider" />
-        <table className="table">
+        <table className="table table-lg">
           <tbody>
             <tr>
               <td>

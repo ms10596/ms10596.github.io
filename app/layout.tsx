@@ -1,7 +1,6 @@
 import "./globals.css";
 
 import Footer from "./Footer";
-import { Header } from "./Header";
 import type { Metadata } from "next";
 import { Providers } from "./providers";
 import { Roboto_Mono } from "next/font/google";

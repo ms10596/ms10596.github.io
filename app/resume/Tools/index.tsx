@@ -17,7 +17,7 @@ function Tools() {
                 <div className="flex gap-x-6 gap-y-3 flex-wrap pt-3">
                   {value.map((skill, j) => {
                     return (
-                      <span className="badge flex gap-x-1 bg-base-300" key={j}>
+                      <span className="badge badge-lg flex gap-x-1 bg-base-300" key={j}>
                         {skill.name}
                         {skill.icon}
                       </span>

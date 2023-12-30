@@ -5,12 +5,7 @@ import Tools from "./Tools";
 
 export default function Page() {
   return (
-    <div
-      style={{
-        gridArea: "content",
-      }}
-      className="flex flex-col gap-y-3 gap-x-9 md:flex-row md:p-10 bg-base-300"
-    >
+    <div className="flex flex-col gap-y-3 gap-x-9 md:flex-row">
       <div className="w-full flex flex-col md:w-1/3 gap-y-3 md:sticky md:self-start md:top-0">
         <Intro />
         <Tools />

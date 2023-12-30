@@ -3,10 +3,7 @@ import { ThemeSwitcher } from "./components/theme-switcher";
 
 export function Header() {
   return (
-    <div
-      style={{ gridArea: "header" }}
-      className="navbar print:hidden flex justify-between items-center"
-    >
+    <div className="navbar print:hidden flex justify-between items-center">
       <Link href={"/"} className="text-xl">
         Mohamed Sayed<div className="badge badge-secondary">beta</div>
       </Link>

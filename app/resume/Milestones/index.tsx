@@ -9,7 +9,7 @@ import { useTheme } from "next-themes";
 function Milestones() {
   const { theme } = useTheme();
   return (
-    <div className="card bg-base-100">
+    <div className="card bg-base-300">
       <div className="card-body">
         <h2 className="card-title">
           <FaFlag /> Milestones

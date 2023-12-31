@@ -5,7 +5,7 @@ export function Header() {
   return (
     <div className="navbar print:hidden flex justify-between items-center">
       <Link href={"/"} className="text-xl">
-        Mohamed Sayed<div className="badge badge-secondary">beta</div>
+        Mohamed Sayed
       </Link>
 
       <div className="flex gap-x-9">

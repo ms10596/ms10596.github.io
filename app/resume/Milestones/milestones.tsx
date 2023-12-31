@@ -11,7 +11,7 @@ import UdacitySecond from "./udacity-second.mdx";
 export const milestones: TimelineItem[] = [
   {
     cardTitle: "Optomatica",
-    title: "2020-04 - present",
+    title: "2020-04- present",
     url: "https://optomatica.com",
     media: {
       type: "IMAGE",
@@ -35,7 +35,7 @@ export const milestones: TimelineItem[] = [
   {
     cardTitle: "Udacity",
     url: "https://udacity.com",
-    title: "2019-06 - 2021-04",
+    title: "2019-06- 2021-04",
     media: {
       type: "IMAGE",
       source: {
@@ -58,7 +58,7 @@ export const milestones: TimelineItem[] = [
   {
     cardTitle: "Agolo",
     url: "https://agolo.com",
-    title: "2019-07 - 2019-10",
+    title: "2019-07- 2019-10",
     media: {
       type: "IMAGE",
       source: {
@@ -76,7 +76,7 @@ export const milestones: TimelineItem[] = [
   {
     cardTitle: "Cairo University",
     url: "https://fcai.cu.edu.eg/",
-    title: "2015-09 - 2019-06",
+    title: "2015-09- 2019-06",
     media: {
       type: "IMAGE",
       source: {

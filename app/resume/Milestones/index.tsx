@@ -37,7 +37,8 @@ function Milestones() {
               },
               classNames: {
                 cardText: "!items-start",
-                cardSubTitle: "!text-lg"
+                cardSubTitle: "!text-lg",
+                title: "!break-word"
               },
               darkMode: theme === "dark",
             } as TimelineProps)}

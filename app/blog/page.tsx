@@ -17,6 +17,7 @@ export default function Page() {
 
   return (
     <div className="pt-10">
+      <h2 className="text-2xl font-bold">Latest Blogs</h2>
       <ul className="menu w-full rounded-box bg-base-200">
         {blogs.map(({ slug, meta }) => (
           <li key={slug}>

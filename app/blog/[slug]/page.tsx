@@ -6,7 +6,7 @@ import rehypeHighlight from "rehype-highlight";
 import remarkGfm from "remark-gfm";
 
 export async function generateStaticParams() {
-  const files = fs.readdirSync(path.join("blogs"));
+  const files = fs.readdirSync(path.join("content", "blogs"));
 
   const paths = files.map((filename) => ({
     slug: filename.replace(".mdx", ""),
@@ -17,7 +17,7 @@ export async function generateStaticParams() {
 
 function getPost({ slug }: { slug: string }) {
   const markdownFile = fs.readFileSync(
-    path.join("blogs", slug + ".mdx"),
+    path.join("content", "blogs", slug + ".mdx"),
     "utf-8"
   );
 

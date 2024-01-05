@@ -4,7 +4,7 @@ import matter from "gray-matter";
 import path from "path";
 
 export default function Page() {
-  const blogDir = path.join("blogs", "content");
+  const blogDir = path.join("content", "blogs");
 
   const blogs = fs.readdirSync(path.join(blogDir)).map((filename) => {
     const fileContent = fs.readFileSync(path.join(blogDir, filename), "utf-8");

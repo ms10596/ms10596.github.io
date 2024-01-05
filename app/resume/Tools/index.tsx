@@ -8,7 +8,6 @@ function Tools() {
         <h2 className="card-title">
           <FaToolbox /> Tools
         </h2>
-        <div className="divider" />
         <div className="flex flex-col gap-y-6">
           {Object.entries(tools).map(([key, value]) => {
             return (

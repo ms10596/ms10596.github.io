@@ -1,16 +1,12 @@
-import {
-  FaEnvelope,
-  FaGithub,
-  FaHouse,
-  FaLinkedin,
-  FaStackOverflow,
-} from "react-icons/fa6";
+import { FaEnvelope, FaGithub, FaHouse, FaLinkedin } from "react-icons/fa6";
+
+import { data } from "./data";
 
 function Intro() {
   return (
     <div className="card bg-base-300">
       <div className="card-body">
-        <h3>Full Stack Web Developer</h3>
+        <h3>{data.position}</h3>
 
         <div className="divider" />
         <table className="table table-md w-5">
@@ -19,14 +15,14 @@ function Intro() {
               <td>
                 <FaHouse />
               </td>
-              <td>Egypt, Giza, Sheikh Zayed</td>
+              <td>{data.address}</td>
             </tr>
             <tr>
               <td>
                 <FaEnvelope />
               </td>
               <td>
-                <a href="mailto:ms10596@gmail.com">ms10596@gmail.com</a>
+                <a href={`mailto:${data.email}`}>{data.email}</a>
               </td>
             </tr>
             <tr>
@@ -34,21 +30,8 @@ function Intro() {
                 <FaGithub />
               </td>
               <td>
-                <a target="_blank" href="https://www.github.com/ms10596">
-                  https://www.github.com/ms10596
-                </a>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <FaStackOverflow />
-              </td>
-              <td>
-                <a
-                  target="_blank"
-                  href="https://stackoverflow.com/users/7954107/mohamed-sayed"
-                >
-                  https://stackoverflow.com/users...
+                <a target="_blank" href={data.github}>
+                  {data.github}
                 </a>
               </td>
             </tr>
@@ -57,8 +40,8 @@ function Intro() {
                 <FaLinkedin />
               </td>
               <td>
-                <a target="_blank" href="https://www.linkedin.com/in/ms10596">
-                  https://www.linkedin.com/in/ms10596
+                <a target="_blank" href={data.linkedin}>
+                  {data.linkedin}
                 </a>
               </td>
             </tr>

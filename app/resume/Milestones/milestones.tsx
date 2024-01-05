@@ -1,94 +1,71 @@
-"use client";
+import { readFileSync, readdirSync } from "fs";
 
-import Agolo from "./agolo.mdx";
-import CairoUniversity from "./cairo-university.mdx";
-import OptomaticaFirst from "./optomatica-first.mdx";
-import OptomaticaSecond from "./optomatica-second.mdx";
+import { MDXRemote } from "next-mdx-remote/rsc";
 import { TimelineItem } from "react-chrono";
-import UdacityFirst from "./udacity-first.mdx";
-import UdacitySecond from "./udacity-second.mdx";
+import { groupBy } from "lodash";
+import matter from "gray-matter";
+import path from "path";
 
-export const milestones: TimelineItem[] = [
-  {
-    cardTitle: "Optomatica",
-    title: "2020-04- present",
-    url: "https://optomatica.com",
-    media: {
-      type: "IMAGE",
-      source: {
-        url: "/optomatica.png",
+function formatDate(date: string) {
+  if (!date) return "Present";
+  return new Date(date).toLocaleDateString("en-US", {
+    month: "long",
+    year: "numeric",
+  });
+}
+
+export function prepareMilestones(): TimelineItem[] {
+  const milestonesDir = path.join("content", "milestones");
+  const milestones = readdirSync(milestonesDir)
+    .map((filename) => {
+      const fileContent = readFileSync(
+        path.join(milestonesDir, filename),
+        "utf-8"
+      );
+      const { data: meta, content } = matter(fileContent);
+      return {
+        meta,
+        content,
+      } as {
+        meta: {
+          companyName: string;
+          companyUrl: string;
+          startDate: string;
+          endDate: string;
+          jobTitle: string;
+          logo: string;
+        };
+        content: string;
+      };
+    })
+    .toSorted(
+      (a, b) =>
+        new Date(b.meta.startDate).getTime() -
+        new Date(a.meta.startDate).getTime()
+    );
+  const groups = groupBy(milestones, (milestone) => milestone.meta.companyName);
+  return Object.entries(groups).map(([key, value]) => {
+    return {
+      cardTitle: key,
+      title: `${formatDate(value.at(-1)?.meta.startDate!)} - ${formatDate(
+        value.at(0)?.meta.endDate!
+      )}`,
+      url: value[0].meta.companyUrl,
+      media: {
+        type: "IMAGE",
+        source: {
+          url: value[0].meta.logo,
+        },
       },
-    },
-    items: [
-      {
-        cardTitle: "2021-08 - present",
-        cardSubtitle: "Full Stack Web Developer",
-        timelineContent: <OptomaticaSecond />,
-      },
-      {
-        cardTitle: "2020-04 - 2021-07",
-        cardSubtitle: "Data Scientist",
-        timelineContent: <OptomaticaFirst />,
-      },
-    ],
-  },
-  {
-    cardTitle: "Udacity",
-    url: "https://udacity.com",
-    title: "2019-06- 2021-04",
-    media: {
-      type: "IMAGE",
-      source: {
-        url: "/udacity.svg",
-      },
-    },
-    items: [
-      {
-        cardTitle: "2020-08 - 2021-04",
-        cardSubtitle: "Session Lead: Web development with Python",
-        timelineContent: <UdacitySecond />,
-      },
-      {
-        cardTitle: "2019-06 - 2019-10",
-        cardSubtitle: "Session Lead: Intro to programming",
-        timelineContent: <UdacityFirst />,
-      },
-    ],
-  },
-  {
-    cardTitle: "Agolo",
-    url: "https://agolo.com",
-    title: "2019-07- 2019-10",
-    media: {
-      type: "IMAGE",
-      source: {
-        url: "/agolo.png",
-      },
-    },
-    items: [
-      {
-        cardTitle: "2019-07 - 2019-10",
-        cardSubtitle: "Natural Language Processing Engineering Internship",
-        timelineContent: <Agolo />,
-      },
-    ],
-  },
-  {
-    cardTitle: "Cairo University",
-    url: "https://fcai.cu.edu.eg/",
-    title: "2015-09- 2019-06",
-    media: {
-      type: "IMAGE",
-      source: {
-        url: "/fci.jpg",
-      },
-    },
-    items: [
-      {
-        cardTitle: "2015-09 - 2019-06",
-        cardSubtitle: "Bachelor's degree, Computer Science",
-        timelineContent: <CairoUniversity />,
-      },
-    ],
-  },
-];
+      items: value.map((milestone) => {
+        return {
+          cardTitle: `${formatDate(milestone.meta.startDate)} - ${formatDate(
+            milestone.meta.endDate
+          )}`,
+          cardSubtitle: milestone.meta.jobTitle,
+          timelineContent: <MDXRemote source={milestone.content} />,
+        };
+      }),
+    };
+  });
+}

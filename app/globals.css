@@ -7,7 +7,7 @@
 }
 
 .card-media-wrapper {
-    @apply !bg-base-300;
+    @apply !bg-base-100;
 }
 
 .timeline-card-content {

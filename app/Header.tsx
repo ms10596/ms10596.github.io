@@ -5,7 +5,7 @@ import { ThemeSwitcher } from "./components/theme-switcher";
 
 export function Header() {
   return (
-    <div className="navbar print:hidden flex justify-between items-center">
+    <div className="navbar flex justify-between items-center">
       <div>
         <Link href={"/"} className="text-xl btn">
           <Avatar />

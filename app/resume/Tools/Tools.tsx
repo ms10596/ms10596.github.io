@@ -8,6 +8,7 @@ import {
   SiMui,
   SiNestjs,
   SiNextdotjs,
+  SiNodedotjs,
   SiPostgresql,
   SiPrisma,
   SiReact,
@@ -24,6 +25,7 @@ import {
 export const tools = {
   Backend: [
     { name: "Rest APIS", icon: null },
+    { name: "NodeJS", icon: <SiNodedotjs /> },
     { name: "Typescript", icon: <SiTypescript /> },
     { name: "NestJS", icon: <SiNestjs /> },
     { name: "Prisma", icon: <SiPrisma /> },

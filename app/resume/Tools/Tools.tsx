@@ -36,7 +36,6 @@ export const tools = {
     { name: "Docker", icon: <SiDocker /> },
   ],
   Frontend: [
-    { name: "Typescript", icon: <SiTypescript /> },
     { name: "React", icon: <SiReact /> },
     { name: "Vite", icon: <SiVite /> },
     { name: "NextJS", icon: <SiNextdotjs /> },

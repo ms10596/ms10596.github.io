@@ -5,15 +5,17 @@ import Tools from "./Tools";
 
 export default function Page() {
   return (
-    <div className="flex flex-col gap-y-3 gap-x-9 md:flex-row">
-      <div className="w-full flex flex-col md:w-1/3 gap-y-3 md:sticky md:self-start md:top-0">
-        <Intro />
-        <Tools />
+    <div className="flex flex-col gap-y-3">
+      <div className="flex gap-x-9 items-stretch">
+        <div className="w-1/3 flex">
+          <Intro />
+        </div>
+        <div className="w-3/4 flex">
+          <Bio />
+        </div>
       </div>
-      <div className="w-full flex flex-col md:w-2/3 gap-y-3">
-        <Bio />
-        <Milestones />
-      </div>
+      <Tools />
+      <Milestones />
     </div>
   );
 }

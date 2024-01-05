@@ -1,52 +1,40 @@
-import { FaEnvelope, FaGithub, FaHouse, FaLinkedin } from "react-icons/fa6";
+import { FaEnvelope, FaGithub, FaHouse, FaLinkedin, FaLocationArrow, FaLocationDot } from "react-icons/fa6";
 
+import { ReactNode } from "react";
 import { data } from "./data";
 
+const Item = ({ children }: { children: ReactNode }) => (
+  <li className="flex gap-x-2 items-center">{children}</li>
+);
 function Intro() {
   return (
-    <div className="card bg-base-300">
+    <div className="card bg-base-300 card-compact">
       <div className="card-body">
-        <h3>{data.position}</h3>
+        <h2 className="card-title">{data.position}</h2>
 
-        <div className="divider" />
-        <table className="table table-md w-5">
-          <tbody>
-            <tr>
-              <td>
-                <FaHouse />
-              </td>
-              <td>{data.address}</td>
-            </tr>
-            <tr>
-              <td>
-                <FaEnvelope />
-              </td>
-              <td>
-                <a href={`mailto:${data.email}`}>{data.email}</a>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <FaGithub />
-              </td>
-              <td>
-                <a target="_blank" href={data.github}>
-                  {data.github}
-                </a>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <FaLinkedin />
-              </td>
-              <td>
-                <a target="_blank" href={data.linkedin}>
-                  {data.linkedin}
-                </a>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <ul className="list-none flex flex-wrap justify-between ps-0 gap-y-3">
+          <Item>
+            <FaLocationDot /> {data.address}
+          </Item>
+          <Item>
+            <FaGithub />
+            <a target="_blank" href={`https://github.com/${data.github}`}>
+              {data.github}
+            </a>
+          </Item>
+          <Item>
+            <FaEnvelope /> <a href={`mailto:${data.email}`}>{data.email}</a>
+          </Item>
+          <Item>
+            <FaLinkedin />
+            <a
+              target="_blank"
+              href={`https://linkedin.com/in/${data.linkedin}`}
+            >
+              {data.linkedin}
+            </a>
+          </Item>
+        </ul>
       </div>
     </div>
   );

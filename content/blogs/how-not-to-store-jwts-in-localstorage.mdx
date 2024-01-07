@@ -1,0 +1,141 @@
+---
+author: "Mohamed Sayed"
+title: "How not to store jwts in localstorage?"
+date: "2024-01-01"
+description: ""
+---
+When learning building Single Page Applications (SPA) with React, you will learn that you need to store the jwt token in the localstorage to keep the user logged in. The flow goes as follows:
+1. Post request is sent from React client to the server with the user credentials.
+2. Server validates the credentials and returns a jwt token.
+3. The client stores the jwt token in the localstorage.
+4. The client sends the jwt token in the header of every request to the server.
+5. The server validates the jwt token and returns the requested data.
+
+The flow looks simple and localstorage is straightforward to use. It's simply a key-value store that you can store any key-value pair in it. But there is a small problem with this flow.
+
+> localstorage is accessible by all tabs that uses JS in the browser.
+
+This means that if you have a malicious script running in the browser, it can access the jwt token and send it to the attacker. This is called XSS attack. The attacker can then use the jwt token to impersonate the user.
+
+So how can we solve this problem? One of the solutions is to use *httpOnly cookies*. Let's understand what is a cookie first.
+
+> A cookie is a small piece of data that is stored in the browser.
+
+But if it's stored in the browser, Does that mean that it's accessible by JS? The answer is Yes and No.
+
+> An httpOnly cookie is not accessible by JS. They are carried in the request header and the browser handles them automatically.
+
+Now we'll do a small tutorial on how to use httpOnly cookies in a React app. We'll use the following stack:
+- [Elysia](https://elysiajs.com/): An ergonomic framework for Humans built on [Bun](https://bun.sh).
+- [React](https://react.dev/): The JavaScript library for building user interfaces.
+
+### Let's start by creating a new Elysia project after installing bun runtime.
+
+```bash
+bun create elysia cookies-backend
+cd cookies-backend
+bun add @elysiajs/cookie @elysiajs/jwt
+bun run dev
+```
+In the above script we've scaffolded a new Elysia project and added the cookie and jwt packages. We've also started the development server.
+
+We'll need to edit the `src/index.ts` file. We'll borrow the example from the [Elysia documentation](https://elysiajs.com/plugins/jwt).
+
+```ts
+import { Elysia } from "elysia";
+import { cookie } from "@elysiajs/cookie";
+import jwt from "@elysiajs/jwt";
+
+const app = new Elysia()
+  .use(
+    jwt({
+      name: "jwt",
+      secret: "very secret",
+    })
+  )
+  .use(cookie())
+  .get("/sign/:name", async ({ jwt, cookie, setCookie, params }) => {
+    // The sign in route that sets the cookie in the response header.
+    setCookie("auth", await jwt.sign(params), {
+      httpOnly: true,
+      maxAge: 7 * 86400,
+    });
+
+    return `Sign in as ${cookie.auth}`;
+  })
+  .get("/profile", async ({ jwt, set, cookie: { auth } }) => {
+    // This route is protected by jwt. It reads the cookie from the request header.
+    // If the cookie is not present or invalid, it returns 401.
+    const profile = await jwt.verify(auth);
+    if (!profile) {
+      set.status = 401;
+      return "Unauthorized";
+    }
+    return `Hello ${profile.name}`;
+  })
+  .listen(3000);
+
+```
+
+The above snippet starts an http server on port 3000. It has two routes:
+- `/sign/:name`: This route signs the user in and sets the cookie in the response header.
+- `/profile`: This route is protected by jwt. It reads the cookie from the request header. If the cookie is not present or invalid, it returns 401.
+
+### Now let's create a React app that consumes the backend API.
+Let's scaffold a vite react app.
+
+```bash
+npm create vite
+cd cookies-frontend
+npm install
+npm run dev
+```
+
+Now let's edit the `src/App.tsx` file.
+
+```tsx
+import { useEffect, useState } from "react";
+
+function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    fetch("/profile").then((res) => {
+      if (res.status === 200) setIsLoggedIn(true);
+      else setIsLoggedIn(false);
+    });
+  }, []);
+
+  if (!isLoggedIn)
+    return (
+      <div>
+        <button
+          onClick={() => {
+            fetch("/sign/somebody", { method: "GET" }).then((res) => {
+              if (res.status === 200) setIsLoggedIn(true);
+            });
+          }}
+        >
+          Log in
+        </button>
+      </div>
+    );
+  return <div>Logged In</div>;
+}
+
+export default App;
+```
+
+The above snippet sends request to the `/profile` route. If the request is successful, it sets the `isLoggedIn` state to true. Otherwise, it sets it to false. If the user is not logged in, it shows a button that sends a request to the `/sign/:name` route. If the request is successful, it sets the `isLoggedIn` state to true.
+
+### Let's examine the cookies tab in the browser devtools.
+1. Before clicking the login button.
+![cookies before login](./cookies-before-login.png)
+2. After clicking the login button.
+![cookies after login](./cookies-after-login.png)
+
+After login any request will be backed up by the cookie in the request header. If the cookie is not present or invalid, the server will return 401.
+
+I believe that this is an easier and more secure way to handle JWTs in between client and server. Personally I used to store the jwt token in the localstorage and I needed an axios interceptor to add the jwt token in the request header. But now I don't need to do that. I just need to send the request and the browser will handle the rest. Also I do really like the way [Elysia](https://elysiajs.com/) works. It's very ergonomic and easy to use and it offers [End-to-End typesafety solutions](https://elysiajs.com/eden/overview.html). I recommend you to check it out.
+
+Thanks for reading.

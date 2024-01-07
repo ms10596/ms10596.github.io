@@ -38,6 +38,11 @@ export default function Post({ params }: { params: { slug: string } }) {
       <h1>{props.frontMatter.title}</h1>
       <MDXRemote
         source={props.content}
+        components={{
+          img: (props) => (
+            <img {...props} className="mx-auto" style={{ maxWidth: "100%" }} />
+          ),
+        }}
         options={{
           mdxOptions: {
             remarkPlugins: [remarkGfm],

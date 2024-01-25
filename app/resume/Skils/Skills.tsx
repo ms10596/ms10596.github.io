@@ -22,7 +22,7 @@ import {
   SiZod,
 } from "react-icons/si";
 
-export const tools = {
+export const skills = {
   Backend: [
     { name: "Rest APIS", icon: null },
     { name: "NodeJS", icon: <SiNodedotjs /> },

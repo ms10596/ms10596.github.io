@@ -1,7 +1,7 @@
 import Bio from "./Bio";
 import Intro from "./Intro";
 import Milestones from "./Milestones";
-import Tools from "./Tools";
+import Skills from "./Skils";
 
 export default function Page() {
   return (
@@ -14,7 +14,7 @@ export default function Page() {
           <Bio />
         </div>
       </div>
-      <Tools />
+      <Skills />
       <Milestones />
     </div>
   );

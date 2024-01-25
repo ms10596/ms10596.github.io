@@ -1,16 +1,15 @@
 import { FaToolbox } from "react-icons/fa6";
-import { tools } from "./Tools";
-import { twMerge } from "tailwind-merge";
+import { skills } from "./Skills";
 
-function Tools() {
+function Skills() {
   return (
     <div className="card bg-base-300 card-compact">
       <div className="card-body">
         <h2 className="card-title">
-          <FaToolbox /> Tools
+          <FaToolbox /> Skills
         </h2>
         <div className="flex gap-y-6">
-          {Object.entries(tools).map(([key, value], i) => {
+          {Object.entries(skills).map(([key, value], i) => {
             return (
               <div key={key}>
                 <em style={{ textShadow: "0 0 2px #ffffff" }}>{key}</em>
@@ -36,4 +35,4 @@ function Tools() {
   );
 }
 
-export default Tools;
+export default Skills;

@@ -8,10 +8,10 @@ function Skills() {
         <h2 className="card-title">
           <FaToolbox /> Skills
         </h2>
-        <div className="flex gap-y-6">
+        <div className="flex justify-between">
           {Object.entries(skills).map(([key, value], i) => {
             return (
-              <div key={key}>
+              <div key={key} className="max-w-2xl">
                 <em style={{ textShadow: "0 0 2px #ffffff" }}>{key}</em>
                 <div className={"flex gap-x-6 gap-y-3 flex-wrap pt-3"}>
                   {value.map((skill, j) => {

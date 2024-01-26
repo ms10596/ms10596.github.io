@@ -1,8 +1,11 @@
+import { DetailedHTMLProps, ImgHTMLAttributes } from "react";
+
 import { MDXRemote } from "next-mdx-remote/rsc";
 import fs from "fs";
 import matter from "gray-matter";
 import path from "path";
 import rehypeHighlight from "rehype-highlight";
+import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
 
 export async function generateStaticParams() {
@@ -39,17 +42,22 @@ export default function Post({ params }: { params: { slug: string } }) {
       <MDXRemote
         source={props.content}
         components={{
-          img: (props) => (
-            <img {...props} className="mx-auto" style={{ maxWidth: "100%" }} />
-          ),
+          img: CustomImage,
         }}
         options={{
           mdxOptions: {
             remarkPlugins: [remarkGfm],
-            rehypePlugins: [rehypeHighlight as any],
+            rehypePlugins: [rehypeHighlight as any, rehypeSlug],
           },
         }}
       />
     </article>
   );
 }
+
+const CustomImage = (
+  props: DetailedHTMLProps<
+    ImgHTMLAttributes<HTMLImageElement>,
+    HTMLImageElement
+  >
+) => <img {...props} className="mx-auto" style={{ maxWidth: "100%" }} />;

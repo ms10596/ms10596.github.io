@@ -7,9 +7,9 @@ description: ""
 In this tutorial, we'll be learning how to make the NestJS config service typesafe. Our objective is to prevent our app from starting before validating the enviroment variables. I want to provide config service with a better developer experience and I want to utilize packages I already have which are `class-validator` and `class-transformer`.
 
 ## Steps
-1. Scaffold a new NestJS project using the Nest CLI.
-2. Create a schema using class-validator.
-3. Infer types.
+1. [Scaffold a new NestJS project using the Nest CLI.](#1-scaffold-a-new-nestjs-project-using-the-nest-cli)
+2. [Create a schema using class-validator.](#2-create-a-schema-using-class-validator)
+3. [Infer types.](#3-infer-types)
 
 ## 1. Scaffold a new NestJS project using the Nest CLI.
 Here, We'll need an empty NestJS project. You can find the steps in the [official documentation](https://docs.nestjs.com/first-steps#setup). We'll also need to install `@nestjs/config`, `class-validator` and `class-transformer` packages.
@@ -93,7 +93,7 @@ export function validate(config: Record<string, unknown>) {
   providers: [AppService],
 })
 ```
-Now if we try to start the app we'll get an errors
+Now if we try to start the app we'll get those errors.
 ```
 Error: An instance of EnvironmentVariables has failed the validation:
  - property NODE_ENV has failed the following constraints: isEnum 
@@ -126,7 +126,7 @@ export class AppService {
   }
 }
 ```
-Congratulations! Now we've a typesafe config service.
+Congratulations! Now the IDE will suggest the right enviroment variables names and you will get the right types.
 
 ## Bonus
 1. Can we make the `ConfigService` easier to be used?

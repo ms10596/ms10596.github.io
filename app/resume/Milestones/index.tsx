@@ -1,6 +1,6 @@
-import { FaFlag } from "react-icons/fa6";
-import { Timeline } from "./Timeline";
-import { prepareMilestones } from "./milestones";
+import { FaFlag } from 'react-icons/fa6';
+import { Timeline } from './Timeline';
+import { prepareMilestones } from './milestones';
 
 function Milestones() {
   const milestones = prepareMilestones();

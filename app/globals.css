@@ -3,29 +3,29 @@
 @tailwind utilities;
 
 .timeline-main-wrapper {
-    padding: 0 !important;
+  padding: 0 !important;
 }
 
 .card-media-wrapper {
-    @apply !bg-base-100;
+  @apply !bg-base-100;
 }
 
 .timeline-card-content {
-    @apply !bg-base-100;
+  @apply !bg-base-100;
 }
 
 div:has(> .timeline-item-title) {
-    @apply hidden md:flex;
+  @apply hidden md:flex;
 }
 
 div:has(> .timeline-vertical-circle) {
-    @apply hidden md:flex;
+  @apply hidden md:flex;
 }
 
 div:has(> .vertical-item-row) {
-    @apply p-0;
+  @apply p-0;
 }
 
 .card-content-wrapper {
-    @apply !w-full md:w-3/4;
+  @apply !w-full md:w-3/4;
 }

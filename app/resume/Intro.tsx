@@ -1,7 +1,14 @@
-import { FaEnvelope, FaGithub, FaHouse, FaLinkedin, FaLocationArrow, FaLocationDot } from "react-icons/fa6";
+import {
+  FaEnvelope,
+  FaGithub,
+  FaHouse,
+  FaLinkedin,
+  FaLocationArrow,
+  FaLocationDot
+} from 'react-icons/fa6';
 
-import { ReactNode } from "react";
-import { data } from "./data";
+import { ReactNode } from 'react';
+import { data } from './data';
 
 const Item = ({ children }: { children: ReactNode }) => (
   <li className="flex gap-x-2 items-center">{children}</li>

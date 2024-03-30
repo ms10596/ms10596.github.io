@@ -1,13 +1,13 @@
-import { FaLaptopCode } from "react-icons/fa6";
-import Image from "next/image";
-import Link from "next/link";
-import { ThemeSwitcher } from "./components/theme-switcher";
+import { FaLaptopCode } from 'react-icons/fa6';
+import Image from 'next/image';
+import Link from 'next/link';
+import { ThemeSwitcher } from './components/theme-switcher';
 
 export function Header() {
   return (
     <div className="navbar flex justify-between items-center">
       <div>
-        <Link href={"/"} className="text-xl btn">
+        <Link href={'/'} className="text-xl btn">
           <Avatar />
           Mohamed Sayed
         </Link>

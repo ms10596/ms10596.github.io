@@ -1,20 +1,20 @@
-import "./globals.css";
-import "./styles/highlight-js/github-dark.css";
+import './globals.css';
+import './styles/highlight-js/github-dark.css';
 
-import Footer from "./Footer";
-import { Header } from "./Header";
-import type { Metadata } from "next";
-import { Providers } from "./providers";
-import { Roboto_Mono } from "next/font/google";
+import Footer from './Footer';
+import { Header } from './Header';
+import type { Metadata } from 'next';
+import { Providers } from './providers';
+import { Roboto_Mono } from 'next/font/google';
 
-const robotoMono = Roboto_Mono({ subsets: ["latin"] });
+const robotoMono = Roboto_Mono({ subsets: ['latin'] });
 export const metadata: Metadata = {
-  title: "Mohamed Sayed",
-  description: "Personal website",
+  title: 'Mohamed Sayed',
+  description: 'Personal website'
 };
 
 export default function RootLayout({
-  children,
+  children
 }: {
   children: React.ReactNode;
 }) {

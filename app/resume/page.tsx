@@ -1,7 +1,7 @@
-import Bio from "./Bio";
-import Intro from "./Intro";
-import Milestones from "./Milestones";
-import Skills from "./Skils";
+import Bio from './Bio';
+import Intro from './Intro';
+import Milestones from './Milestones';
+import Skills from './Skils';
 
 export default function Page() {
   return (

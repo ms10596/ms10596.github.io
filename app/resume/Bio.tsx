@@ -1,8 +1,8 @@
-import { compileMDX } from "next-mdx-remote/rsc";
+import { compileMDX } from 'next-mdx-remote/rsc';
 
 const Bio = async () => {
   const source = await fetch(
-    "https://raw.githubusercontent.com/ms10596/ms10596/master/README.md"
+    'https://raw.githubusercontent.com/ms10596/ms10596/master/README.md'
   )
     .then((res) => res.text())
     .then((source) => compileMDX({ source }));

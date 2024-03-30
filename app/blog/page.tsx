@@ -1,22 +1,22 @@
-import Link from "next/link";
-import fs from "fs";
-import matter from "gray-matter";
-import path from "path";
+import Link from 'next/link';
+import fs from 'fs';
+import matter from 'gray-matter';
+import path from 'path';
 
 export default function Page() {
-  const blogDir = path.join("content", "blogs");
+  const blogDir = path.join('content', 'blogs');
 
   const blogs = fs
     .readdirSync(path.join(blogDir))
     .map((filename) => {
       const fileContent = fs.readFileSync(
         path.join(blogDir, filename),
-        "utf-8"
+        'utf-8'
       );
       const { data: frontMatter } = matter(fileContent);
       return {
         meta: frontMatter,
-        slug: filename.replace(".mdx", ""),
+        slug: filename.replace('.mdx', '')
       };
     })
     .toSorted(
@@ -35,8 +35,8 @@ export default function Page() {
               passHref
               className="flex justify-between"
             >
-              {meta.title}{" "}
-              <em style={{ textShadow: "0 0 2px #ffffff" }}>{meta.date}</em>
+              {meta.title}{' '}
+              <em style={{ textShadow: '0 0 2px #ffffff' }}>{meta.date}</em>
             </Link>
           </li>
         ))}

@@ -1,5 +1,5 @@
-import { FaToolbox } from "react-icons/fa6";
-import { skills } from "./Skills";
+import { FaToolbox } from 'react-icons/fa6';
+import { skills } from './Skills';
 
 function Skills() {
   return (
@@ -12,8 +12,8 @@ function Skills() {
           {Object.entries(skills).map(([key, value], i) => {
             return (
               <div key={key} className="max-w-2xl">
-                <em style={{ textShadow: "0 0 2px #ffffff" }}>{key}</em>
-                <div className={"flex gap-x-6 gap-y-3 flex-wrap pt-3"}>
+                <em style={{ textShadow: '0 0 2px #ffffff' }}>{key}</em>
+                <div className={'flex gap-x-6 gap-y-3 flex-wrap pt-3'}>
                   {value.map((skill, j) => {
                     return (
                       <span

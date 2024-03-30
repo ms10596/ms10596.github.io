@@ -1,9 +1,9 @@
-import { expect, test } from "vitest";
+import { expect, test } from 'vitest';
 
-import { render } from "@testing-library/react";
-import Bio from "../Bio";
+import { render } from '@testing-library/react';
+import Bio from '../Bio';
 
-test("Bio", async () => {
+test('Bio', async () => {
   const { getByText } = render(await Bio());
   expect(getByText(/type safety/)).toBeDefined();
 });

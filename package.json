@@ -7,7 +7,9 @@
         "build": "next build",
         "start": "next start",
         "lint": "next lint",
-        "test": "vitest"
+        "test": "vitest run",
+        "format": "prettier --write .",
+        "prepare": "husky"
     },
     "dependencies": {
         "@mdx-js/loader": "^3.0.0",
@@ -38,9 +40,11 @@
         "daisyui": "^4.4.17",
         "eslint": "^8",
         "eslint-config-next": "13.5.4",
+        "husky": "^9.0.11",
         "jsdom": "^24.0.0",
         "lodash": "^4.17.21",
         "postcss": "^8",
+        "prettier": "^3.2.5",
         "tailwindcss": "^3",
         "typescript": "^5",
         "vitest": "^1.4.0"

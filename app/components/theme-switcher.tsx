@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import { useTheme } from "next-themes";
+import { useTheme } from 'next-themes';
 
 export function ThemeSwitcher() {
   const { theme, setTheme } = useTheme();
@@ -9,9 +9,9 @@ export function ThemeSwitcher() {
       <input
         type="checkbox"
         className="theme-controller"
-        checked={theme === "light"}
+        checked={theme === 'light'}
         onChange={(e) => {
-          setTheme(e.target.checked ? "light" : "dark");
+          setTheme(e.target.checked ? 'light' : 'dark');
         }}
       />
       <svg

@@ -1,31 +1,31 @@
-import { readFileSync, readdirSync } from "fs";
+import { readFileSync, readdirSync } from 'fs';
 
-import { MDXRemote } from "next-mdx-remote/rsc";
-import { TimelineItem } from "react-chrono";
-import { groupBy } from "lodash";
-import matter from "gray-matter";
-import path from "path";
+import matter from 'gray-matter';
+import groupBy from 'lodash/groupBy';
+import { MDXRemote } from 'next-mdx-remote/rsc';
+import path from 'path';
+import { TimelineItem } from 'react-chrono';
 
 function formatDate(date: string) {
-  if (!date) return "Present";
-  return new Date(date).toLocaleDateString("en-US", {
-    month: "long",
-    year: "numeric",
+  if (!date) return 'Present';
+  return new Date(date).toLocaleDateString('en-US', {
+    month: 'long',
+    year: 'numeric'
   });
 }
 
 export function prepareMilestones(): TimelineItem[] {
-  const milestonesDir = path.join("content", "milestones");
+  const milestonesDir = path.join('content', 'milestones');
   const milestones = readdirSync(milestonesDir)
     .map((filename) => {
       const fileContent = readFileSync(
         path.join(milestonesDir, filename),
-        "utf-8"
+        'utf-8'
       );
       const { data: meta, content } = matter(fileContent);
       return {
         meta,
-        content,
+        content
       } as {
         meta: {
           companyName: string;
@@ -52,10 +52,10 @@ export function prepareMilestones(): TimelineItem[] {
       )}`,
       url: value[0].meta.companyUrl,
       media: {
-        type: "IMAGE",
+        type: 'IMAGE',
         source: {
-          url: value[0].meta.logo,
-        },
+          url: value[0].meta.logo
+        }
       },
       items: value.map((milestone) => {
         return {
@@ -63,9 +63,9 @@ export function prepareMilestones(): TimelineItem[] {
             milestone.meta.endDate
           )}`,
           cardSubtitle: milestone.meta.jobTitle,
-          timelineContent: <MDXRemote source={milestone.content} />,
+          timelineContent: <MDXRemote source={milestone.content} />
         };
-      }),
+      })
     };
   });
 }

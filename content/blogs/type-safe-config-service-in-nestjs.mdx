@@ -1,17 +1,20 @@
 ---
-author: "Mohamed Sayed"
-title: "Typesafe Config Service in NestJS"
-date: "2024-01-25"
-description: ""
+author: 'Mohamed Sayed'
+title: 'Typesafe Config Service in NestJS'
+date: '2024-01-25'
+description: ''
 ---
+
 In this tutorial, we'll be learning how to make the NestJS config service typesafe. Our objective is to prevent our app from starting before validating the enviroment variables. I want to provide config service with a better developer experience and I want to utilize packages I already have which are `class-validator` and `class-transformer`.
 
 ## Steps
+
 1. [Scaffold a new NestJS project using the Nest CLI.](#1-scaffold-a-new-nestjs-project-using-the-nest-cli)
 2. [Create a schema using class-validator.](#2-create-a-schema-using-class-validator)
 3. [Infer types.](#3-infer-types)
 
 ## 1. Scaffold a new NestJS project using the Nest CLI.
+
 Here, We'll need an empty NestJS project. You can find the steps in the [official documentation](https://docs.nestjs.com/first-steps#setup). We'll also need to install `@nestjs/config`, `class-validator` and `class-transformer` packages.
 
 ```bash
@@ -19,7 +22,9 @@ nest new typesafe-config
 cd typesafe-config
 npm i --save @nestjs/config class-validator class-transformer
 ```
+
 We'll focus now on the `src` folder it should look something like that:
+
 ```
 ├── src
 │   ├── app.controller.spec.ts
@@ -46,21 +51,25 @@ export class AppService {
   }
 }
 ```
+
 Currently we've 3 problems:
+
 1. There's not .env file in our project but the app started successfully.
 2. The `nodeEnv` variable is of type `any`. It should be of type `Environment`.
 3. The `configService.get` function does not suggest any keys.
 
 ## 2. Create a schema using class-validator.
+
 We'll create a schema using `class-validator`. We'll create a new file `.env.validation.ts` and We'll borrow the snippet from [NestJS documentation](https://docs.nestjs.com/techniques/configuration#custom-validate-function) with minor modifications. We'll pass the `validate` function inside the `ConfigModule.forRoot({validte})`.
+
 ```ts
 // .env.validation.ts
 import { plainToInstance } from 'class-transformer';
 import { IsEnum, IsNumber, validateSync } from 'class-validator';
 
 enum Environment {
-  Development = "development",
-  Production = "production",
+  Development = 'development',
+  Production = 'production'
 }
 
 export class EnvironmentVariables {
@@ -72,12 +81,12 @@ export class EnvironmentVariables {
 }
 
 export function validate(config: Record<string, unknown>) {
-  const validatedConfig = plainToInstance(
-    EnvironmentVariables,
-    config,
-    { enableImplicitConversion: true },
-  );
-  const errors = validateSync(validatedConfig, { skipMissingProperties: false });
+  const validatedConfig = plainToInstance(EnvironmentVariables, config, {
+    enableImplicitConversion: true
+  });
+  const errors = validateSync(validatedConfig, {
+    skipMissingProperties: false
+  });
 
   if (errors.length > 0) {
     throw new Error(errors.toString());
@@ -85,6 +94,7 @@ export function validate(config: Record<string, unknown>) {
   return validatedConfig;
 }
 ```
+
 ```ts
 // app.module.ts
 @Module({
@@ -93,19 +103,24 @@ export function validate(config: Record<string, unknown>) {
   providers: [AppService],
 })
 ```
+
 Now if we try to start the app we'll get those errors.
+
 ```
 Error: An instance of EnvironmentVariables has failed the validation:
- - property NODE_ENV has failed the following constraints: isEnum 
+ - property NODE_ENV has failed the following constraints: isEnum
 ,An instance of EnvironmentVariables has failed the validation:
  - property PORT has failed the following constraints: isNumber
 ```
-> Now we've validated our environment variables but we still don't have typesafety. 
+
+> Now we've validated our environment variables but we still don't have typesafety.
 
 Now we need to create a `.env` file and add the following variables `NODE_ENV=development` and `PORT=3000`.
 
 ## 3. Infer types.
+
 In order to infer the types of the environment variables we've to pass the `EnvironmentVariables` class to the `ConfigService` as a generic type. Also we'll need to pass the `infer` option to the `get` function in order to infer the type of the variable.
+
 ```ts
 import { ConfigService } from '@nestjs/config';
 import { EnvironmentVariables } from './env.validation';
@@ -114,26 +129,29 @@ import { Injectable } from '@nestjs/common';
 @Injectable()
 export class AppService {
   constructor(
-    private readonly configService: ConfigService<EnvironmentVariables>,
+    private readonly configService: ConfigService<EnvironmentVariables>
   ) {}
   getHello(): string {
     const nodeEnv = this.configService.get('NODE_ENV', {
       //    ^? const nodeEnv: Environment
-      infer: true,
+      infer: true
     });
 
     return 'Hello World!';
   }
 }
 ```
+
 Congratulations! Now the IDE will suggest the right enviroment variables names and you will get the right types.
 
 ## Bonus
+
 1. Can we make the `ConfigService` easier to be used?
-Yes, but we'll need to create a custom config module and a custom config service that lift the heavy lifiting for us.
+   Yes, but we'll need to create a custom config module and a custom config service that lift the heavy lifiting for us.
 
 2. What about the `process.env`?
-We can make it typesafe also by declaring a `types.ts` file in the root of our project and add the following code. For more info you can check [this video](https://www.youtube.com/watch?v=q1im-hMlKhM) by the legend Matt Pocock.
+   We can make it typesafe also by declaring a `types.ts` file in the root of our project and add the following code. For more info you can check [this video](https://www.youtube.com/watch?v=q1im-hMlKhM) by the legend Matt Pocock.
+
 ```ts
 //types.ts
 import { EnvironmentVariables } from './env.validation';
@@ -147,5 +165,5 @@ declare global {
 ```
 
 ## Conclusion
-In this tutorial, we've learned how to make the NestJS config service typesafe. We've also learned how to validate the environment variables using class-validator. You can find the source code [here](https://github.com/ms10596/typesafe-config). Thanks for reading.
 
+In this tutorial, we've learned how to make the NestJS config service typesafe. We've also learned how to validate the environment variables using class-validator. You can find the source code [here](https://github.com/ms10596/typesafe-config). Thanks for reading.

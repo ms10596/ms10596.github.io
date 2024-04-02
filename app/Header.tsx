@@ -1,7 +1,8 @@
-import { FaLaptopCode } from 'react-icons/fa6';
 import Image from 'next/image';
 import Link from 'next/link';
+import { FaLaptopCode } from 'react-icons/fa6';
 import { ThemeSwitcher } from './components/theme-switcher';
+import { data } from './resume/data';
 
 export function Header() {
   return (
@@ -9,7 +10,7 @@ export function Header() {
       <div>
         <Link href={'/'} className="text-xl btn">
           <Avatar />
-          Mohamed Sayed
+          {data.name}
         </Link>
       </div>
 

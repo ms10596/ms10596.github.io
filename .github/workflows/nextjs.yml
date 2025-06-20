@@ -78,6 +78,8 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./out
+      - name: generate-sitemap
+        uses: cicirello/generate-sitemap@v1.10.1
 
   # Deployment job
   deploy:

@@ -16,7 +16,7 @@
     "@mdx-js/loader": "^3.0.0",
     "@next/mdx": "^14.0.4",
     "gray-matter": "^4.0.3",
-    "next": "^16.2.6",
+    "next": "^16.2.12",
     "next-mdx-remote": "^6.0.0",
     "next-themes": "^0.2.1",
     "react": "^18",

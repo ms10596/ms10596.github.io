@@ -2,11 +2,7 @@ import Image from 'next/image';
 import { FaArrowUpRightFromSquare } from 'react-icons/fa6';
 import { CompanyMilestone } from './milestones';
 
-export function Timeline({
-  milestones
-}: {
-  milestones: CompanyMilestone[];
-}) {
+export function Timeline({ milestones }: { milestones: CompanyMilestone[] }) {
   return (
     <ul className="timeline timeline-vertical timeline-compact w-full">
       {milestones.map((milestone, idx) => {

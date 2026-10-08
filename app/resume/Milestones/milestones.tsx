@@ -1,12 +1,11 @@
 import { readFileSync, readdirSync } from 'fs';
+import path from 'path';
 
 import matter from 'gray-matter';
 import groupBy from 'lodash/groupBy';
 import { MDXRemote } from 'next-mdx-remote/rsc';
-import path from 'path';
-import { TimelineItem } from 'react-chrono';
 
-function formatDate(date: string) {
+function formatDate(date?: string) {
   if (!date) return 'Present';
   return new Date(date).toLocaleDateString('en-US', {
     month: 'long',
@@ -14,7 +13,23 @@ function formatDate(date: string) {
   });
 }
 
-export function prepareMilestones(): TimelineItem[] {
+export interface MilestoneRole {
+  jobTitle: string;
+  startDate: string;
+  endDate?: string;
+  dateRange: string;
+  content: React.ReactNode;
+}
+
+export interface CompanyMilestone {
+  companyName: string;
+  companyUrl?: string;
+  logo: string;
+  dateRange: string;
+  roles: MilestoneRole[];
+}
+
+export function prepareMilestones(): CompanyMilestone[] {
   const milestonesDir = path.join('content', 'milestones');
   const milestones = readdirSync(milestonesDir)
     .map((filename) => {
@@ -29,9 +44,9 @@ export function prepareMilestones(): TimelineItem[] {
       } as {
         meta: {
           companyName: string;
-          companyUrl: string;
+          companyUrl?: string;
           startDate: string;
-          endDate: string;
+          endDate?: string;
           jobTitle: string;
           logo: string;
         };
@@ -43,29 +58,26 @@ export function prepareMilestones(): TimelineItem[] {
         new Date(b.meta.startDate).getTime() -
         new Date(a.meta.startDate).getTime()
     );
+
   const groups = groupBy(milestones, (milestone) => milestone.meta.companyName);
-  return Object.entries(groups).map(([key, value]) => {
+
+  return Object.entries(groups).map(([companyName, roleMilestones]) => {
     return {
-      cardTitle: key,
-      title: `${formatDate(value.at(-1)?.meta.startDate!)} - ${formatDate(
-        value.at(0)?.meta.endDate!
+      companyName,
+      companyUrl: roleMilestones[0].meta.companyUrl,
+      logo: roleMilestones[0].meta.logo,
+      dateRange: `${formatDate(roleMilestones.at(-1)?.meta.startDate)} - ${formatDate(
+        roleMilestones.at(0)?.meta.endDate
       )}`,
-      url: value[0].meta.companyUrl,
-      media: {
-        type: 'IMAGE',
-        source: {
-          url: value[0].meta.logo
-        }
-      },
-      items: value.map((milestone) => {
-        return {
-          cardTitle: `${formatDate(milestone.meta.startDate)} - ${formatDate(
-            milestone.meta.endDate
-          )}`,
-          cardSubtitle: milestone.meta.jobTitle,
-          timelineContent: <MDXRemote source={milestone.content} />
-        };
-      })
+      roles: roleMilestones.map((milestone) => ({
+        jobTitle: milestone.meta.jobTitle,
+        startDate: milestone.meta.startDate,
+        endDate: milestone.meta.endDate,
+        dateRange: `${formatDate(milestone.meta.startDate)} - ${formatDate(
+          milestone.meta.endDate
+        )}`,
+        content: <MDXRemote source={milestone.content} />
+      }))
     };
   });
 }

@@ -3,5 +3,6 @@
     "next/core-web-vitals",
     "plugin:testing-library/react",
     "plugin:jest-dom/recommended"
-  ]
+  ],
+  "ignorePatterns": ["out/", ".next/"]
 }

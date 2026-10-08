@@ -1,4 +1,4 @@
-import { DetailedHTMLProps, ImgHTMLAttributes } from 'react';
+import { ComponentProps } from 'react';
 
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import fs from 'fs';
@@ -33,8 +33,13 @@ function getPost({ slug }: { slug: string }) {
   };
 }
 
-export default function Post({ params }: { params: { slug: string } }) {
-  const props = getPost(params);
+export default async function Post({
+  params
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const props = getPost({ slug });
 
   return (
     <article className="prose prose-sm md:prose-base lg:prose-lg prose-slate dark:prose-invert mx-auto">
@@ -42,12 +47,12 @@ export default function Post({ params }: { params: { slug: string } }) {
       <MDXRemote
         source={props.content}
         components={{
-          img: CustomImage
+          img: CustomImage as any
         }}
         options={{
           mdxOptions: {
-            remarkPlugins: [remarkGfm],
-            rehypePlugins: [rehypeHighlight as any, rehypeSlug]
+            remarkPlugins: [remarkGfm as any],
+            rehypePlugins: [rehypeHighlight as any, rehypeSlug as any]
           }
         }}
       />
@@ -55,9 +60,7 @@ export default function Post({ params }: { params: { slug: string } }) {
   );
 }
 
-const CustomImage = (
-  props: DetailedHTMLProps<
-    ImgHTMLAttributes<HTMLImageElement>,
-    HTMLImageElement
-  >
-) => <img {...props} className="mx-auto" style={{ maxWidth: '100%' }} />;
+const CustomImage = (props: ComponentProps<'img'>) => (
+  // eslint-disable-next-line @next/next/no-img-element, jsx-a11y/alt-text
+  <img {...props} className="mx-auto" style={{ maxWidth: '100%' }} />
+);

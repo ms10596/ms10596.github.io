@@ -1,13 +1,11 @@
 import {
-  SiAmazonaws,
   SiAntdesign,
-  SiCss3,
+  SiCss,
   SiCypress,
   SiDaisyui,
   SiDocker,
   SiElectron,
   SiGraphql,
-  SiHeroku,
   SiHtml5,
   SiJenkins,
   SiLinux,
@@ -29,6 +27,8 @@ import {
   SiVite,
   SiZod
 } from 'react-icons/si';
+import { FaAws } from 'react-icons/fa';
+import { GrHeroku } from 'react-icons/gr';
 
 export const skills = {
   Backend: [
@@ -40,15 +40,15 @@ export const skills = {
     { name: 'PostgreSQL', icon: <SiPostgresql /> },
     { name: 'GraphQL', icon: <SiGraphql /> },
     { name: 'Linux', icon: <SiLinux /> },
-    { name: 'AWS', icon: <SiAmazonaws /> },
-    { name: 'Heroku', icon: <SiHeroku /> },
+    { name: 'AWS', icon: <FaAws /> },
+    { name: 'Heroku', icon: <GrHeroku /> },
     { name: 'Docker', icon: <SiDocker /> },
     { name: 'Jenkins', icon: <SiJenkins /> }
   ],
   Frontend: [
     { name: 'React', icon: <SiReact /> },
     { name: 'Vite', icon: <SiVite /> },
-    { name: 'CSS', icon: <SiCss3 /> },
+    { name: 'CSS', icon: <SiCss /> },
     { name: 'HTML', icon: <SiHtml5 /> },
     { name: 'NextJS', icon: <SiNextdotjs /> },
     { name: 'React-Query', icon: <SiReactquery /> },

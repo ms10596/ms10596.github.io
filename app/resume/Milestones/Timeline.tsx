@@ -1,20 +1,32 @@
 'use client';
 
-import { Chrono } from 'react-chrono';
-import { TimelineProps } from 'react-chrono/dist/models/TimelineModel';
+import { useSyncExternalStore } from 'react';
+import { Chrono, TimelineProps } from 'react-chrono';
 import { useTheme } from 'next-themes';
+
+const emptySubscribe = () => () => {};
 
 export function Timeline({
   milestones
 }: {
   milestones: TimelineProps['items'];
 }) {
+  const mounted = useSyncExternalStore(
+    emptySubscribe,
+    () => true,
+    () => false
+  );
   const { theme } = useTheme();
+
+  if (!mounted) {
+    return null;
+  }
+
   return (
     <Chrono
       {...({
         items: milestones,
-        mode: 'VERTICAL',
+        mode: 'vertical',
         flipLayout: true,
         hideControls: true,
         useReadMore: false,
@@ -35,7 +47,7 @@ export function Timeline({
           cardSubTitle: '!text-lg',
           title: '!break-word'
         },
-        darkMode: theme === 'dark'
+        darkMode: { enabled: theme === 'dark' }
       } as TimelineProps)}
     />
   );
